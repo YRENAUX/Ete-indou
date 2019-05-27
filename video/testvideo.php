@@ -41,10 +41,6 @@
             <div class="controls-L">
               <button id="playBtn" class="control" onclick="play('videoPlayer', this)"><i class="far fa-play-circle fa-2x" id="transportIcon"></i></button>
               <button class="control" onclick="resume('videoPlayer')"><i class="far fa-stop-circle fa-2x"></i></button>
-            </div>
-            <img src="logoo.png" alt="logo été indien" width="50em" height="50em"/>
-            <div class="controls-R">
-              <button class="control" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
               <span class="volume">
                 <a class="stick1" onclick="volume('videoPlayer', 0)"></a>
                 <a class="stick2" onclick="volume('videoPlayer', 0.3)"></a>
@@ -52,6 +48,10 @@
                 <a class="stick4" onclick="volume('videoPlayer', 0.7)"></a>
                 <a class="stick5" onclick="volume('videoPlayer', 1)"></a>
               </span>
+            </div>
+            <img src="logoo.png" alt="logo été indien" width="50em" height="50em"/>
+            <div class="controls-R">
+              <button class="control" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
             </div>
           </div>
         </div>
