@@ -17,7 +17,7 @@
 
 <body>
 <header>
-  <?php include 'header.php' ?>
+  <?php include 'header2.php' ?>
 </header>
 
 <main>
