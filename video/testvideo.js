@@ -42,3 +42,10 @@ function play(idPlayer, control) {
 
     player.volume = vol;
   }
+/* fonction qui gère le plein écran */
+function fullscreen() {
+  var elem = document.getElementById("videoPlayer");
+  if (elem.requestFullscreen) {
+  elem.requestFullscreen();
+  }
+}

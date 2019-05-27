@@ -47,6 +47,7 @@
               </span>
             </div>
             <img src="logoo.png" alt="logo été indien" width="50em" height="50em"/>
+            <button class="control" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
           </div>
         </div>
       </div>

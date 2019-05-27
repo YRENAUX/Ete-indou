@@ -81,3 +81,7 @@ video {
   height: 25px;
   left: 36px;
 }
+/* css du bouton plein écran */
+.fa-compress {
+  color: #ff9900;
+}
