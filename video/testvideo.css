@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.sitecontent {
+  margin-top: 20em;
+}
 /* css pour la vidéo */
 .lecteur_frame /* cadre du lecteur*/{
   display: flex;

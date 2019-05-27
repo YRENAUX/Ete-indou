@@ -17,6 +17,7 @@
 
 <body>
 <header>
+  <?php include 'header.php' ?>
 </header>
 
 <main>
@@ -49,7 +50,7 @@
                 <a class="stick5" onclick="volume('videoPlayer', 1)"></a>
               </span>
             </div>
-            <img src="logoo.png" alt="logo été indien" width="50em" height="50em"/>
+            <img src="logo.png" alt="logo été indien" width="50em" height="50em"/>
             <div class="controls-R">
               <button class="control" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
             </div>
