@@ -17,6 +17,7 @@
 
 <body>
 <header>
+  <?php include 'header.php' ?>
 </header>
 
 <main>
@@ -34,7 +35,7 @@
               Si la vidéo ne s'affiche pas correctement, merci de mettre à jour votre navigateur !!
             </video>
             <div id="progressBarControl">
-              <div id="progressBar" onclick="clickProgress('audioPlayer', this, event)"></div>
+              <div id="progressBar" onclick="clickProgress('videoPlayer', this, event)"></div>
             </div>
           </div>
           <div class="barre">
@@ -49,7 +50,7 @@
                 <a class="stick5" onclick="volume('videoPlayer', 1)"></a>
               </span>
             </div>
-            <img src="logoo.png" alt="logo été indien" width="50em" height="50em"/>
+            <img src="logo.png" alt="logo été indien" width="50em" height="50em"/>
             <div class="controls-R">
               <button class="control" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
             </div>

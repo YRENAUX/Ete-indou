@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.sitecontent {
+  margin-top: 20em;
+}
 /* css pour la vidéo */
 .lecteur_frame /* cadre du lecteur*/{
   display: flex;
@@ -68,7 +71,7 @@ video {
 }
 .volume a {
   display: inline-block;
-  background: #ebebeb;
+  background: #ff9900;
   width: 7px;
   vertical-align: bottom;
   margin-left: 0px;
@@ -98,6 +101,9 @@ video {
 .stick5 /*volume max*/ {
   height: 25px;
   left: 36px;
+}
+.stick1:hover, .stick2:hover, .stick3:hover, .stick4:hover, .stick5:hover{
+  background-color: #fff;
 }
 /* css du bouton plein écran */
 .fa-compress {
