@@ -59,5 +59,4 @@ function update(player) {
 
     var progress = document.querySelector('#progressBar');
     progress.style.width = percent + '%';
-    progress.textContent = percent + '%';
 }
