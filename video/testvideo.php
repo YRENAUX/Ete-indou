@@ -34,7 +34,7 @@
               Si la vidéo ne s'affiche pas correctement, merci de mettre à jour votre navigateur !!
             </video>
             <div id="progressBarControl">
-              <div id="progressBar" onclick="clickProgress('audioPlayer', this, event)"></div>
+              <div id="progressBar" onclick="clickProgress('videoPlayer', this, event)"></div>
             </div>
           </div>
           <div class="barre">
