@@ -26,13 +26,16 @@
         <div class="col-md-4">
           <h1 class="site-title text-center">Votre vidéo ici !</h1>
           <div class="lecteur_frame">
-            <video id="videoPlayer" width="600em" height="300em"
+            <video id="videoPlayer" ontimeupdate="update(this)" width="600em" height="300em"
             poster="gym.jpg" preload="auto">
               <!--mp4 en tête de liste pour compatibilité portable -->
               <source src="coray.mp4" type="video/mp4">
               <source src="coray.webm" type="video/webm">
               Si la vidéo ne s'affiche pas correctement, merci de mettre à jour votre navigateur !!
             </video>
+            <div id="progressBarControl">
+              <div id="progressBar"></div>
+            </div>
           </div>
           <div class="barre">
             <div class="controls-L">

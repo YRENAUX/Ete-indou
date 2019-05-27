@@ -18,6 +18,24 @@ video {
   flex: 1 1 auto;
   z-index: 5;
 }
+/* css de la barre de progression */
+#progressBarControl {
+    width: 100%;
+    height: 0.5em;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+#progressBar {
+    width: 0px;
+    background: #ff9900;
+    height: 0.8em;
+    text-align: right;
+    font-size: 9px;
+    white-space: nowrap;
+    cursor: pointer;
+}
 .barre /* div qui contient tous les contrôles de la vidéo*/ {
   display: flex;
   justify-content: space-between;

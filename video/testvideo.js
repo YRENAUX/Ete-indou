@@ -49,3 +49,15 @@ function fullscreen() {
   elem.requestFullscreen();
   }
 }
+/* fonction de la barre de progression */
+function update(player) {
+    var duration = player.duration; // Durée totale
+    var time     = player.currentTime;// Temps écoulé
+
+    var fraction = time / duration;
+    var percent  = Math.ceil(fraction * 100);
+
+    var progress = document.querySelector('#progressBar');
+    progress.style.width = percent + '%';
+    progress.textContent = percent + '%';
+}
