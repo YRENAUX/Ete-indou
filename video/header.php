@@ -103,7 +103,7 @@
     </div>
     <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
     <button class="btn btn-outline-dark  my-2 my-sm-0" type="submit">Recherche</button>
-    <div class="contact">
+    <div class="contact col-md-2">
       <p>+33 (0)3 24 58 13 43 &amp; bonjour@ete-indien-editions.fr</p>
     </div>
   </div>
