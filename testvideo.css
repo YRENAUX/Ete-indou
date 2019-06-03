@@ -2,23 +2,11 @@
   margin: 0;
   padding: 0;
 }
+.sitecontent {
+  margin-top: 20em;
+}
 /* css pour la vidéo */
-
-/* css pour la description de la vidéo */
-#video-descriptif {
-  height: 25em;
-  margin: 2em;
-  border: 0.3em solid #ff9900;
-}
-/* css pour la card de la vidéo */
-#video-card {
-  height: 25em;
-  margin: 2em;
-  padding: 1em;
-  background-color : #4c4c4c;
-  opacity: 0.7;
-}
-.lecteur_frame {
+.lecteur_frame /* cadre du lecteur*/{
   display: flex;
   flex-direction: column;
   flex: 0 1 auto;
@@ -33,46 +21,60 @@ video {
   flex: 1 1 auto;
   z-index: 5;
 }
-.barre {
+/* css de la barre de progression */
+#progressBarControl {
+    width: 100%;
+    height: 0.5em;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+#progressBar {
+    width: 0px;
+    background: #ff9900;
+    height: 1.2em;
+    text-align: right;
+    font-size: 9px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.barre /* div qui contient tous les contrôles de la vidéo*/ {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #4c4c4c;
   opacity: 0.7;
 }
+/* css des contrôles de la vidéo */
 .control {
   background-color: transparent;
   border: none;
 }
-.fa-play-circle {
+.controls-L {
+padding-left: 0;
+}
+.fa-play-circle /*bouton play*/{
   color: #ff9900;
-  padding-left: 0.5em;
 }
-.fa-pause-circle {
+.fa-pause-circle /*bouton pause*/{
   color: #ff9900;
-  padding-left: 0.5em;
 }
-.fa-stop-circle {
+.fa-stop-circle /*bouton stop*/{
   color: #ff9900;
-  padding-left: 0.5em;
 }
-.stick2 {
-  width: 1em;
-  height: 0.5em;
-  background-color: #ff9900;
-}
-
+/* css de la partie volume */
 .volume {
-  vertical-align: bottom;
+  vertical-align: center;
   display: inline-block;
   height: 25px;
   white-space: nowrap;
   position: relative;
   width: 45px;
 }
-
 .volume a {
   display: inline-block;
-  background: #ebebeb;
+  background: #ff9900;
   width: 7px;
   vertical-align: bottom;
   margin-left: 0px;
@@ -82,21 +84,15 @@ video {
   position: absolute;
   bottom: 0;
 }
-
-.stick1 {
+/* css des différents sticks du volume */
+.stick1 /*pas de son*/{
   height: 5px;
   left: 0;
 }
-
-.stick1:active { 
-  background-color: blue;
-}
-
 .stick2 {
   height: 10px;
   left: 9px;
 }
-
 .stick3 {
   height: 15px;
   left: 18px;
@@ -105,18 +101,19 @@ video {
   height: 20px;
   left: 27px;
 }
-
-.stick5 {
+.stick5 /*volume max*/ {
   height: 25px;
   left: 36px;
 }
-.stick5:visited { 
-  color: blue;
+.stick1:hover, .stick2:hover, .stick3:hover, .stick4:hover, .stick5:hover{
+  background-color: #fff;
+}
+/* css du bouton plein écran */
+
+#grdecran{
+  padding-right: 10px;
 }
 
-/* css de la paralax */
-
-/* css de la série de vidéo */
-#video {
-  margin: 3em;
+.fa-compress {
+  color: #fff;
 }

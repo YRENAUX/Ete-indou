@@ -1,0 +1,151 @@
+
+*{
+    font-family: arial;
+}
+
+.navbar{
+    height: 100px;
+    background-color: #EEEEEE ;
+}
+
+#navbarNav{
+    background-color: #EEEEEE;
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.head{
+    justify-content: left;
+}
+#right{
+    padding: 0;
+}
+
+.main-title{
+    margin-top: 120px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.bandeau{
+    background-color: #EEEEEE;
+    padding: 2%;
+    text-align: center;
+}
+
+#main-photo{
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 2%;
+}
+
+.main-para{
+    font-size: 1.6em;
+}
+
+#left{
+    padding: 0;
+}
+
+.menu{    
+    background-color: #4C4C4C;
+    height: 100%;
+    padding: 0;
+    padding-top: 50%;
+    border-radius: 0 5px 5px 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.menu li{
+    max-width: 200px;
+    list-style: none;
+    margin-top: 15%;
+    line-height: 2.2em;  
+    color: whitesmoke; 
+}
+
+.liens{
+    position: fixed;
+    padding-left: 3%; 
+}
+
+
+.menu-img{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.menu li:hover{
+    cursor: pointer;
+    color: #FF823B ;
+    background-color: #292E33;
+    transition: 0.5s;
+}
+
+#liens{
+    width: 20rem;
+}
+
+#vid{
+    margin-top: 2%;
+}
+
+#sous-vid{
+    justify-content: space-around;
+}
+
+.section-1{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.section-2{
+    margin-top: 4%;
+}
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 1250px) {
+
+    .menu{
+        font-size: 1.2em;
+    }
+
+    .liens{
+        padding-left: 1.5%; 
+    }
+
+    .menu-img{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+
+    .menu{
+        display: none;
+    }
+
+
+    .menu-img{
+        float: left;
+        margin: 0;
+        width: 70px;
+        height: 70px;
+    }
+
+
+}
+@media only screen and (max-width: 700px) {
+
+
+
+}

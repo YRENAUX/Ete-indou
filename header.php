@@ -35,7 +35,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #f1f1f1!important;
     min-width: 160px;
     z-index: 1;
     transition: 1s;
@@ -79,7 +79,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="img/logo1.png" alt="logo"></a>
+  <a class="navbar-brand" href="menu.php"><img src="img/logo1.png" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -100,9 +100,6 @@
         <a id="drop" href="#">LINK 2</a>
         <a id="drop" href="#">LINK 3</a>
       </div>
-    </div>
-    <div class="contact">
-      <p>+33 (0)3 24 58 13 43 &amp; bonjour@ete-indien-editions.fr</p>
     </div>
   </div>
 </nav>

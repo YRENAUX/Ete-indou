@@ -42,6 +42,7 @@
             background-color: #EEEEEE;
         }
 
+
         #head-para {
             padding: 2%;
             height: 200px;
@@ -69,6 +70,7 @@
             line-height: 2.4em;
         }
 
+
         .carou-title {
             font-size: 30px;
             color: #eee;
@@ -77,10 +79,6 @@
             border-radius: 5px;
         }
 
-        #main-vid iframe {
-            height: 365px;
-            width: 650px;
-        }
 
         .parallax-window {
             margin-top: 2em;
@@ -89,8 +87,9 @@
         }
 
         #first {
-            padding-left: 5%;
-            height: 200px;
+            padding-left: 3%;
+            padding-right: 3%;
+            max-height: 200px;
             width: 355px;
         }
 
@@ -99,14 +98,35 @@
             margin-bottom: 2%;
             padding-top: 2%;
             padding-bottom: 2%;
-            background-color: #EEEEEE;
+            background-color: #787878;
+        }
+
+
+        .carousel-control-next,
+        .carousel-control-prev {
+            width: 8%;
+        }
+
+        #car {
+            padding-left: 0;
+            margin-left: -1%;
         }
 
         #miniature {
             width: 120%;
         }
 
+        #vid-petit {
+            display: none;
+        }
+
         @media only screen and (max-width: 730px) {
+
+            #head-title {
+                font-size: 24px;
+                height: 50px;
+            }
+
 
             .carou-title {
                 display: none;
@@ -118,7 +138,7 @@
             }
 
             #head-para {
-                font-size: 16px;
+                font-size: 14px;
                 height: 100px;
                 line-height: 1.6em;
             }
@@ -128,6 +148,21 @@
                 height: 100px;
             }
 
+            #car {
+                margin-left: 13%;
+            }
+
+            #first {
+                padding: 10%;
+            }
+
+            #vid {
+                display: none;
+            }
+
+            #vid-petit {
+                display: block;
+            }
 
         }
     </style>
@@ -153,6 +188,12 @@
     include "testvideo.php";
    ?>
                                 </div>
+                                <div class="col-8" id="vid-petit">
+                                    <?php
+    include "video_petit.php";
+   ?>
+                                </div>
+
                             </div>
                             <div class="row mx-auto" id="para">
 
@@ -160,8 +201,7 @@
                                 <div class="col-md-7">
                                     <p id="head-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Reiciendis modi voluptas saepe excepturi corporis, voluptatem eius distinctio
-                                        dolor esse eveniet ab numquam accusamus, beatae doloremque provident similique!
-                                        Soluta, deleniti modi.</p>
+                                        dolor esse eveniet ab numquam accusamus</p>
                                 </div>
                                 <div class="col-md-3 text-center">
                                     <p id="head-para2">
@@ -182,6 +222,11 @@
     include "testvideo.php";
    ?>
                                 </div>
+                                <div class="col-8" id="vid-petit">
+                                    <?php
+    include "video_petit.php";
+   ?>
+                                </div>
                             </div>
                             <div class="row mx-auto" id="para">
 
@@ -189,8 +234,7 @@
                                 <div class="col-md-7">
                                     <p id="head-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Reiciendis modi voluptas saepe excepturi corporis, voluptatem eius distinctio
-                                        dolor esse eveniet ab numquam accusamus, beatae doloremque provident similique!
-                                        Soluta, deleniti modi.</p>
+                                        dolor esse eveniet ab numquam accusamus</p>
                                 </div>
                                 <div class="col-md-3 text-center">
                                     <p id="head-para2">
@@ -211,6 +255,11 @@
     include "testvideo.php";
    ?>
                                 </div>
+                                <div class="col-8" id="vid-petit">
+                                    <?php
+    include "video_petit.php";
+   ?>
+                                </div>
                             </div>
                             <div class="row mx-auto" id="para">
 
@@ -218,8 +267,7 @@
                                 <div class="col-md-7">
                                     <p id="head-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Reiciendis modi voluptas saepe excepturi corporis, voluptatem eius distinctio
-                                        dolor esse eveniet ab numquam accusamus, beatae doloremque provident similique!
-                                        Soluta, deleniti modi.</p>
+                                        dolor esse eveniet ab numquam accusamus</p>
                                 </div>
                                 <div class="col-md-3 text-center">
                                     <p id="head-para2">
@@ -251,47 +299,53 @@
                     <div class="carousel-item row no-gutters justify-content-center active" id="carou">
                         <div class="row">
                             <div class="col-1"></div>
-                            <div class="col-10">
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/1.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/2.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/3.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/4.png" id="miniature"
-                                        alt=""></div>
+                            <div class="col-10 justify-content-center" id="car">
+                                <div class="row">
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/1.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/2.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/3.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/4.png" id="miniature" alt=""></a></div>
+                                </div>
                             </div>
                             <div class="col-1"></div>
                         </div>
                     </div>
                     <div class="carousel-item row no-gutters justify-content-center" id="carou">
                         <div class="row">
-                            <div class="col-1"></div>
-                            <div class="col-10">
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/1.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/2.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/3.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/4.png" id="miniature"
-                                        alt=""></div>
+                        <div class="col-1"></div>
+                            <div class="col-10 justify-content-center" id="car">
+                                <div class="row">
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/1.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/2.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/3.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/4.png" id="miniature" alt=""></a></div>
+                                </div>
                             </div>
                             <div class="col-1"></div>
                         </div>
                     </div>
                     <div class="carousel-item row no-gutters justify-content-center" id="carou">
                         <div class="row">
-                            <div class="col-1"></div>
-                            <div class="col-10">
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/1.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/2.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/3.png" id="miniature"
-                                        alt=""></div>
-                                <div class="col-10 col-md-3 float-left" id="first"> <img src="img/4.png" id="miniature"
-                                        alt=""></div>
+                        <div class="col-1"></div>
+                            <div class="col-10 justify-content-center" id="car">
+                                <div class="row">
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/1.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/2.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/3.png" id="miniature" alt=""></a></div>
+                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
+                                                src="img/4.png" id="miniature" alt=""></a></div>
+                                </div>
                             </div>
                             <div class="col-1"></div>
                         </div>
