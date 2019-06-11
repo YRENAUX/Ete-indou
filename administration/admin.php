@@ -14,24 +14,25 @@
 </head>
 
 <body>
-    <form  method="post" class="form-signin ">
-        <div id="logo" class="mb-5 mx-auto text-center">
-    <img class="mt-5" src="../logo.png" width="200px" alt="logo étoile champenoise">
-        </div>
-        <h1 class="h3 mb-3 text-light text-center font-weight-normal text-dark">Espace Administration</h1>
-        <label for="inputEmail" class="sr-only">Email</label>
-        <input type="text" name="email" id="inputUserName" class="form-control text-center" placeholder="Votre Pseudo" required
-            autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control text-center" placeholder="Votre mot de passe"
-            required>
-        <div class="checkbox mb-3">
-        </div>
-        <button class="btn btn-lg  btn-block" name="submit" type="submit">Connexion</button>
-        <a href="#" class="ac mt-3">Retour à l'Accueil</a>
-        <p class="mt-5 mb-3 text-light text-center">&copy; Etoile Champenoise 2019</p>
-    </form>
+  <form method="post" class="form-signin ">
+    <div id="logo" class="mb-5 mx-auto text-center">
+      <img class="mt-5" src="../logo.png" width="200px" alt="logo étoile champenoise">
     </div>
+    <h1 class="h3 mb-3 text-light text-center font-weight-normal text-dark">Espace Administration</h1>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="text" name="email" id="inputUserName" class="form-control text-center" placeholder="Votre Pseudo"
+      required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control text-center"
+      placeholder="Votre mot de passe" required>
+    <div class="checkbox mb-3">
+    </div>
+    <button class="btn btn-lg  btn-block" name="submit" type="submit">Connexion</button>
+    <a href="#" class="ac mt-3">Retour à l'Accueil</a>
+    
+    <p class="mt-5 text-dark text-center">&copy; Été indien 2019</p>
+  </form>
+  </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
