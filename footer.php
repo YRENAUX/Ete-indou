@@ -20,22 +20,35 @@
         padding-top: 1%;
     }
 
+    .c-links {
+        width: 100%;
+        justify-content: space-around;
+        padding-left: 2%;
+        padding-top: 2%;
+    }
+
     .c-link {
         color: #EEE;
     }
 
     .c-link:hover {
-        color: #FF823B;
+        color: #ff5c00;
         text-decoration: none;
     }
 
     .fonta {
         padding: 1% 1% 0 1%;
-        color:#FF823B
+        color:#ff5c00;
+        margin-left: 2%;
     }
 
     .fonta:hover {
         color: #EEE;
+    }
+
+    .c-contact{
+        width: 100%;
+        text-align: center;
     }
 
     
@@ -45,12 +58,15 @@
   }
 
   .c-nav {
-        text-align: left;
-        margin: 5% 0 5% 20%;
+        text-align: center;
+        margin: 8% 0 8% 0;
         font-size: 14px;
         line-height: 2em;
     }
 
+    .c-contact{
+        font-size: 14px;
+    }
   }
 
 </style>
@@ -66,14 +82,14 @@
                         src="https://www.ete-indien-editions.fr/wp-content/uploads/logo-ete-indien-editions.png" /></noscript>
             </div>
         </div>
-        <div class="col-md-3" id="foot-text">
+        <div class="col-md-2" id="foot-text">
             <p class="c-about">Programmes de prévention santé par l'activité physique adaptée en présentiel &amp; vidéo pour les personnes seniors.</p>
         </div>
-        <div class="col-md-7">
-            <div class="row mx-auto justify-content-center">
+        <div class="col-md-8">
+            <div class="row mx-auto">
                 <div class="c-links">
                     <ul id="menu-menu-du-pied-de-page" class="c-nav">
-                        <div class="row mx-auto justify-content-center">
+                        <div class="row mx-auto">
                             <div class="col-md-4">
                                 <li id="menu-item-285"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-285"><a
@@ -117,17 +133,17 @@
                                         Vente</a></li>
                             </div>
                             <div class="col-md-4">
-                                <li id="menu-item-284"
+                                <li class="fon" id="menu-item-284"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-284">
                                     <a href="https://www.ete-indien-editions.fr/protection-donnees-personnelles/"
                                         class="c-link">Protection
                                         des données personnelles</a></li>
-                                <li id="menu-item-258"
+                                <li class="fon" id="menu-item-258"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-258"><a
                                         href="https://www.ete-indien-editions.fr/mentions-legales/"
                                         class="c-link">Mentions
                                         Légales</a></li>
-                                <li id="menu-item-254"
+                                <li class="fon" id="menu-item-254"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-254"><a
                                         href="https://www.ete-indien-editions.fr/plan-de-site/" class="c-link">Plan de
                                         site</a>

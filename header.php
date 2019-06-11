@@ -3,18 +3,19 @@
     position: fixed;
     width: 100%;
     z-index: 20;
-    background-color: #eee!important;
+    background-color: #eee !important;
     padding: 0 2% 0 2%;
     top: 0;
+    margin: 0;
   }
 
-  .collapse{
+  .collapse {
     margin-left: 20px;
 
   }
 
   .dropbtn {
-    background-color: #eee!important;
+    background-color: #eee !important;
     color: #1d1d1d;
     padding: 30px;
     font-size: 20px;
@@ -23,8 +24,8 @@
   }
 
   .dropbtn:hover {
-    color: #FF823B!important;
-    background-color: #F8F9FA!important;
+    color: #ff5c00 !important;
+    background-color: #F8F9FA !important;
   }
 
   .dropdown {
@@ -35,14 +36,14 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1!important;
-    min-width: 160px;
+    background-color: #f1f1f1 !important;
     z-index: 1;
     transition: 1s;
+    width: 100%;
   }
 
   #drop {
-    color: white!important;
+    color: white !important;
     font-size: 16px;
     font-weight: 600;
     padding: 12px 16px;
@@ -51,32 +52,45 @@
   }
 
   #drop:hover {
-    background-color: black!important;
-    color: #FF823B!important;
+    background-color: black !important;
+    color: #ff5c00 !important;
   }
 
   .dropdown:hover .dropdown-content {
     display: block;
-    background-color: black!important;
+    background-color: black !important;
   }
 
   .dropdown:hover .dropbtn {
-    background-color: #F8F9FA!important;
+    background-color: #F8F9FA !important;
   }
 
-  .contact{
-    margin-left: 55%;
+
+  .form {
+    display: flex;
+  }
+
+  .btn{
+    color: black!important;
+    border: solid 1px black!important;
+  }
+
+  .btn:hover{
+    border: solid 1px black!important;
+    background-color: #ff5c00;
   }
 
   @media only screen and (max-width: 960px) {
-  .contact{ 
+    .contact {
+      display: none;
+    }
+
+    .form {
     display: none;
   }
+
   }
-
 </style>
-
-
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="menu.php"><img src="img/logo1.png" alt="logo"></a>
@@ -101,5 +115,9 @@
         <a id="drop" href="#">LINK 3</a>
       </div>
     </div>
-  </div>
+    </div>
+    <div class="form">
+      <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
+      <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Rechercher</button>
+    </div>
 </nav>

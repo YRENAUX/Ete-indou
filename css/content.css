@@ -1,0 +1,246 @@
+*{
+    font-family: open sans;
+}
+
+.container-fluid {
+    padding: 0;
+    font-family: arial;
+}
+
+#head {
+    padding: 0;
+    margin-top: 100px;
+}
+
+#para {
+    padding: 2% 0 2% 0;
+}
+
+#head-title {
+    height: 120px;
+    padding: 2%;
+    font-weight: 700;
+}
+
+#head-vid {
+    background-color: #EEEEEE;
+}
+
+#head-para {
+    padding: 2%;
+    height: 200px;
+    color: black;
+    padding-top: 20px;
+}
+
+#head-para2 {
+    font-size: 0.8em;
+    line-height: 1.8em;
+    color: black;
+    border: none;
+    margin-bottom: 0;
+}
+
+.mot{
+    font-weight: 600;
+    margin-left: 1%;
+}
+
+#main-vid {
+    font-family: arial;
+    font-size: 1.6em;
+    width: 80%;
+    background-color: white;
+    border: solid 2px #FF823B;
+    border-radius: 15px;
+    margin-left: 10%;
+}
+
+
+.carou-title {
+    font-size: 38px;
+    color: #FF823B;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+
+.carousel-control-next-icon{
+  content: '>';
+  font-size: 55px;
+  font-weight: 800;
+  background-color: #FF823B;
+  border-radius: 5px;
+  height: 120px;
+  width: 60px;
+}
+
+.carousel-control-prev-icon {
+  content: '<';
+  font-size: 55px;
+  font-weight: 800;
+  background-color: #FF823B;
+  border-radius: 5px;
+  height: 120px;
+  width: 60px;
+}
+
+.parallax-window {
+    margin-top: 2em;
+    min-height: 30em;
+    width: 100%;
+}
+
+.para-title{
+    padding-top: 4%;
+    font-size: 8em;
+    color: #eee;
+    font-weight: 600;
+    text-align: center;
+}
+
+#first {
+    padding-left: 3%;
+    padding-right: 3%;
+    max-height: 200px;
+    width: 355px;
+}
+
+#recipeCarousel {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
+
+.car-title{
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    color: black;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 8%;
+}
+
+#car {
+    padding-left: 0;
+    margin-left: -1%;
+}
+
+#miniature {
+    width: 115%;
+}
+
+#vid-petit {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 730px) {
+
+    #head-title {
+        font-size: 24px;
+        height: 50px;
+    }
+
+    .bandeau{
+        height: 200px;
+        margin-top: 30%;
+    }
+
+    #main-vid iframe {
+        height: 150px;
+        width: 266px;
+    }
+
+    .carousel-control-next-icon:after{
+        margin-right:-45px;
+        padding: 1px 3px;
+    }
+
+    .carousel-control-prev-icon:after{
+        margin-left:-5px;
+        padding: 1px 3px;
+    }
+
+    #head-para {
+        font-size: 14px;
+        height: 100px;
+        line-height: 1.6em;
+    }
+
+    #head-para2 {
+        font-size: 16px;
+        height: 100px;
+    }
+
+    .parallax-window {
+    min-height: 10em;
+    }
+
+    .para-title{
+        font-size: 2.6em;
+    }
+
+    .car-title{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    }
+
+    #head-para2 {
+    margin-bottom: -40px;
+    }
+
+    #car {
+        margin-left: 13%;
+    }
+
+    .collapse{
+        margin: 0;
+    }
+
+    #first {
+        padding: 8%;
+    }
+
+    #first img{
+        padding: 18%;
+        margin-top: -25%;
+    }
+
+    #vid {
+        display: none;
+    }
+
+    #vid-petit {
+        display: block;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    #main-vid {
+        font-size: 1em;
+    }
+
+    .bandeau{
+        height: 200px;
+        margin-top: 40%;
+    }
+
+    #first img{
+        padding: 12%;
+        margin-top: -15%;
+    }
+
+    #first {
+        padding: 0;
+    }
+}

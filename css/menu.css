@@ -13,6 +13,10 @@
     margin: 0;
 }
 
+.form{
+    margin-right: 16%;
+}
+
 .container-fluid{
     padding: 0;
 }
@@ -28,11 +32,15 @@
     margin-top: 120px;
     margin-bottom: 15px;
     text-align: center;
+    font-weight: 700;
 }
 .bandeau{
-    background-color: #EEEEEE;
     padding: 2%;
     text-align: center;
+}
+
+#hr{
+    background-color: #ff5c00!important;
 }
 
 #main-photo{
@@ -48,16 +56,20 @@
 #left{
     padding: 0;
 }
+.mini_menu{
+    display: none;
+}
 
 .menu{    
+    display: flex;
     background-color: #4C4C4C;
     height: 100%;
     padding: 0;
     padding-top: 50%;
-    border-radius: 0 5px 5px 0;
     font-size: 1.6em;
     font-weight: 600;
     text-align: center;
+    justify-content: center;
 }
 
 .menu li{
@@ -69,14 +81,12 @@
 }
 
 .liens{
+    top: 35%;
     position: fixed;
-    padding-left: 3%; 
 }
 
-
 .menu-img{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    height: 150px;
 }
 
 
@@ -93,6 +103,7 @@
 
 #vid{
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 #sous-vid{
@@ -111,6 +122,8 @@
 .card{
     margin-left: auto;
     margin-right: auto;
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.44); 
+    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.44);
 }
 
 @media only screen and (max-width: 1250px) {
@@ -120,7 +133,7 @@
     }
 
     .liens{
-        padding-left: 1.5%; 
+        left: 2%;
     }
 
     .menu-img{
@@ -130,10 +143,34 @@
 
 @media only screen and (max-width: 960px) {
 
+.liens{
+    left: 2%;
+}
+
     .menu{
         display: none;
     }
 
+    .mini_menu{
+        display: block;
+        margin: 5% 0;
+    }
+    
+    #list{
+        text-align: center;
+    }
+    
+    #dropdownMenuLink{
+        color: white!important;
+    }
+    
+    .dropdown{
+        margin: 0 5% 2% 0;
+    }
+
+    .form2{
+        display: flex;
+    }
 
     .menu-img{
         float: left;
@@ -146,6 +183,9 @@
 }
 @media only screen and (max-width: 700px) {
 
-
+.main-para{
+    margin: 0 3% 0 3%;
+    font-size: 14px;
+}
 
 }
