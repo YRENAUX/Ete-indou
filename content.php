@@ -193,6 +193,8 @@
 
     </div>
 
+    
+
     <?php include "footer.php";?>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -206,6 +208,10 @@
     </script>
     <script src="js/testvideo.js" type="text/javascript"></script>
     <script src="js/parallax.min.js"></script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6003001.js"></script>
+<!-- End of HubSpot Embed Code -->
+
 
 </body>
 

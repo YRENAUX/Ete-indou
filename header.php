@@ -9,6 +9,10 @@
     margin: 0;
   }
 
+  .navbar-brand{
+    display:none;
+  }
+
   .collapse {
     margin-left: 20px;
 
@@ -65,6 +69,14 @@
     background-color: #F8F9FA !important;
   }
 
+  .tel{
+      width: 100%;
+      font-size: 20px;
+      font-weight: 500;
+      color: #FF823B!important;
+      text-align: center;
+      margin: 0;
+  }
 
   .form {
     display: flex;
@@ -115,6 +127,7 @@
         <a id="drop" href="#">LINK 3</a>
       </div>
     </div>
+    <p class="tel" href="#">N° telephone par mutuelle</p>
     </div>
     <div class="form">
       <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
