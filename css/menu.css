@@ -3,6 +3,18 @@
     font-family: arial;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
 .navbar{
     height: 100px;
     background-color: #EEEEEE ;

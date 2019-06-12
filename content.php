@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/content.css">
 
 </head>
-
+<main>
 <body>
     <?php include "header.php";?>
 
@@ -194,7 +194,7 @@
     </div>
 
     
-
+</main>
     <?php include "footer.php";?>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
