@@ -19,13 +19,14 @@
       <img class="mt-5" src="./logo.png" width="200px" alt="Logo Eté Indien">
     </div>
     <h1 class="h3 mb-3 text-light text-center font-weight-normal text-dark">Espace Connexion</h1>
+    <hr style="background-color:#ff823b;">
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control text-center"
+    <input type="password" name="password" id="inputPassword" class="form-control text-center shadow"
       placeholder="Votre mot de passe" required>
     <div class="checkbox mb-3">
     </div>
     <button class="btn btn-lg  btn-block" name="submit" type="submit">Connexion</button>
-    <a href="#" class="ac mt-3">Retour à l'Accueil</a>
+    <a href="https://www.ete-indien-editions.fr/" class="ac mt-3">Retour à l'Accueil</a>
     
     <p class="mt-5 text-dark text-center">&copy; Été indien 2019</p>
   </form>
