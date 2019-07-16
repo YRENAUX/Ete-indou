@@ -20,7 +20,7 @@
 </head>
 <main>
 <body>
-    <?php include "header.php";?>
+    <?php include "include/header.php";?>
 
     <div class="container-fluid">
         <div class="row justify-content-center text-center mx-auto">
@@ -195,7 +195,7 @@
 
     
 </main>
-    <?php include "footer.php";?>
+    <?php include "include/footer.php";?>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

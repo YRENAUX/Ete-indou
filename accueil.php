@@ -16,7 +16,7 @@
 <body>
   <form method="post" class="form-signin ">
     <div id="logo" class="mb-5 mx-auto text-center">
-      <img class="mt-5" src="./logo.png" width="200px" alt="Logo Eté Indien">
+      <img class="mt-5" src="img/logo.png" width="200px" alt="Logo Eté Indien">
     </div>
     <h1 class="h3 mb-3 text-light text-center font-weight-normal text-dark">Espace Connexion</h1>
     <hr style="background-color:#ff823b;">

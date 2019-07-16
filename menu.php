@@ -33,7 +33,7 @@
             </div>
             <div class="col-lg-10 col-md-12" id="right">
                 <div class="head">
-                    <?php include "header.php";?>
+                    <?php include "include/header.php";?>
                 </div>
                 <h1 class="main-title">BLABLIBLABLOU</h1>
                 <hr class="col-4" id="hr">
@@ -181,7 +181,7 @@
                 </div><br>
                 <hr class="col-4" id="hr"><br>
                 <footer>
-                    <?php include "footer.php"; ?>
+                    <?php include "include/footer.php"; ?>
                 </footer>
             </div>
         </div>
