@@ -1,21 +1,27 @@
 <style>
   .navbar {
     position: fixed;
-    width: 100%;
+    width: 84%;
     z-index: 20;
     background-color: #eee !important;
+    padding: 0 !important;
     padding: 0 2% 0 2%;
     top: 0;
     margin: 0;
   }
 
-  .navbar-brand{
-    display:none;
+  .navbar-brand {
+    display: none;
   }
 
-  .collapse {
-    margin-left: 20px;
+  .navbar-toggler{
+    margin: 15px;
+    outline: none !important;
+    border-color: #FF823B!important;
+  }
 
+  .home {
+    margin: auto 20px;
   }
 
   .dropbtn {
@@ -69,37 +75,76 @@
     background-color: #F8F9FA !important;
   }
 
-  .tel{
-      width: 100%;
-      font-size: 20px;
-      font-weight: 500;
-      color: #FF823B!important;
-      text-align: center;
-      margin: 0;
+  .tel {
+    width: 20rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FF823B !important;
+    text-align: center;
+    margin: 0;
+    line-height: 2em;
   }
 
   .form {
     display: flex;
   }
 
-  .btn{
-    color: black!important;
-    border: solid 1px black!important;
+  .btn {
+    color: black !important;
+    border: solid 1px black !important;
   }
 
-  .btn:hover{
-    border: solid 1px black!important;
+  .btn:hover {
+    border: solid 1px black !important;
     background-color: #ff5c00;
   }
 
-  @media only screen and (max-width: 960px) {
+  .logo_mobile {
+    display: none;
+  }
+  
+  .logo_mobile img{
+      height:auto;
+      width: 90px;
+    }
+
+  @media only screen and (max-width: 1200px) {
+
+    .navbar {
+      width: 100%;
+      height: 70px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+
     .contact {
       display: none;
     }
 
+    .navbar-nav {
+      width: 100%;
+      margin: 0 !important;
+      text-align: center;
+    }
+
     .form {
-    display: none;
-  }
+      display: none;
+    }
+
+    .tel {
+      width: 98vw;
+      margin: 10px auto;
+    }
+
+    .dropdown {
+      width: 20rem;
+      margin: 10px auto;
+    }
+
+    .logo_mobile {
+      display: block;
+    }
 
   }
 </style>
@@ -110,23 +155,30 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <a class="logo_mobile" href="menu.php"><img src="img/logogris.jpg" alt="logo"></a>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <div class="dropdown">
-      <button class="dropbtn">VIDEOS</button>
-      <div class="dropdown-content">
-        <a id="drop" href="#">SPORT</a>
-        <a id="drop" href="#">YOGA</a>
-        <a id="drop" href="#">AUTRES VIDEOS</a>
-      </div>
+    <ul class="navbar-nav mr-auto">
+      <a class="home" href="menu.php" style="color: #FF823B !important; "> <i class="fas fa-home fa-2x"></i>
+      </a>
+      <li class="dropdown"">
+      <button class=" dropbtn">VIDEOS</button>
+        <div class="dropdown-content">
+          <a id="drop" href="#">SPORT</a>
+          <a id="drop" href="#">YOGA</a>
+          <a id="drop" href="#">AUTRES VIDEOS</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <button class="dropbtn">BLABLA</button>
+        <div class="dropdown-content">
+          <a id="drop" href="#">LINK 1</a>
+          <a id="drop" href="#">LINK 2</a>
+          <a id="drop" href="#">LINK 3</a>
+        </div>
+      </li>
+    </ul>
+    <div class="float-right">
+      <p class="tel" href="#">N° telephone par mutuelle</p>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">BLABLA</button>
-      <div class="dropdown-content">
-        <a id="drop" href="#">LINK 1</a>
-        <a id="drop" href="#">LINK 2</a>
-        <a id="drop" href="#">LINK 3</a>
-      </div>
-    </div>
-    <p class="tel" href="#">N° telephone par mutuelle</p>
-    </div>
+  </div>
 </nav>

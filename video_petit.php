@@ -17,7 +17,7 @@
     <button id="playBtn" class="control" onclick="play('videoPlayer', this)"><i class="far fa-play-circle" id="transportIcon"></i></button>
     <button class="control" onclick="resume('videoPlayer')"><i class="far fa-stop-circle"></i></button>
   </div>
-    <img src="img/logovid.png" alt="logo été indien" width="30em" height="30em"/>
+    <img src="img/logovid.png" alt="logo été indien" width="40em" height="40em"/>
   <div class="controls-R">
     <span class="volume">
       <a class="stick1" onclick="volume('videoPlayer', 0)"></a>
@@ -26,8 +26,6 @@
       <a class="stick4" onclick="volume('videoPlayer', 0.7)"></a>
       <a class="stick5" onclick="volume('videoPlayer', 1)"></a>
     </span>
-  </div>
-  <div class="controls-R">
     <button class="control" id="grdecran" onclick="fullscreen()"><i class="fas fa-compress"></i></button>
   </div>
 </div>

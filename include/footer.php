@@ -52,7 +52,7 @@
     }
 
     
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 992px) {
   #foot-title, #foot-text{ 
     display: none;
   }
@@ -105,11 +105,6 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a
                                         href="https://www.ete-indien-editions.fr/contact/" class="c-link">Contact</a>
                                 </li>
-                                <li id="menu-item-257"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a
-                                        href="https://www.ete-indien-editions.fr/foire-aux-questions/"
-                                        class="c-link">Foire aux
-                                        Questions</a></li>
                             </div>
                             <div class="col-md-4">
                                 <li id="menu-item-281"
@@ -122,9 +117,6 @@
                                         href="https://www.ete-indien-editions.fr/affiliation/"
                                         class="c-link">Affiliation</a>
                                 </li>
-                                <li id="menu-item-283"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283"><a
-                                        href="https://www.ete-indien-editions.fr/presse/" class="c-link">Presse</a></li>
                                 <li id="menu-item-256"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-256"><a
                                         href="https://www.ete-indien-editions.fr/conditions-vente/"
@@ -143,11 +135,11 @@
                                         href="https://www.ete-indien-editions.fr/mentions-legales/"
                                         class="c-link">Mentions
                                         Légales</a></li>
-                                <li class="fon" id="menu-item-254"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-254"><a
-                                        href="https://www.ete-indien-editions.fr/plan-de-site/" class="c-link">Plan de
-                                        site</a>
-                                </li>
+                                        <li id="menu-item-257"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a
+                                        href="https://www.ete-indien-editions.fr/foire-aux-questions/"
+                                        class="c-link">Foire aux
+                                        Questions</a></li>
                             </div>
                         </div>
                     </ul>

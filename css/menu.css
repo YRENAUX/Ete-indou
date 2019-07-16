@@ -143,7 +143,7 @@ main{
     padding: 0;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1200px) {
 
 
     .menu{
@@ -162,26 +162,35 @@ main{
     .menu-img{
         width: 80%;
     }
+       
+    #dropdownMenuLink{
+        color: black!important;
+        background-color: white!important;
+        border: solid 1px #FF823B!important;
+        width: 20rem;
+    }
+
+    .dropdown{
+        margin: 0 5% 2% 5%;
+    }
+
+    .dropdown-menu{
+        width: 20rem;
+    }
+
+    .dropdown-item{
+       text-align: center;
+    }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 992px) {
 
 .liens{
     left: 2%;
 }
-
-
-    
+   
     #list{
         text-align: center;
-    }
-    
-    #dropdownMenuLink{
-        color: white!important;
-    }
-    
-    .dropdown{
-        margin: 0 5% 2% 0;
     }
 
     .form2{
