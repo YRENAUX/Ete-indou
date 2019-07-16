@@ -20,7 +20,7 @@
 </head>
 <main>
 <body>
-    <?php include "include/header.php";?>
+    <?php include "include/header_content.php";?>
 
     <div class="container-fluid">
         <div class="row justify-content-center text-center mx-auto">
@@ -121,10 +121,10 @@
         <div class="parallax-window" data-parallax="scroll" data-image-src="img/seniorsport.jpg">
         <h1 class="para-title">Sport en video<br />efficace et ludique!</h1>
         </div>
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row mb-4">
             <div id="recipeCarousel" class="carousel slide w-100  justify-content-center" data-ride="carousel">
             <h4 class="car-title">Autres vidéos de "catégorie 1"</h4>
-                <div class="carousel-inner justify-content-center w-100 phf " role="listbox">
+                <div class="carousel-inner justify-content-center w-100 phf mt-4" role="listbox">
                     <div class="carousel-item row no-gutters justify-content-center active" id="carou">
                         <div class="row">
                             <div class="col-1"></div>

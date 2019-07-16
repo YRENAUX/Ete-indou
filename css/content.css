@@ -1,5 +1,5 @@
 *{
-    font-family: open sans;
+    font-family: arial;
 }
 
 
@@ -151,6 +151,17 @@ main{
     display: none;
 }
 
+@media only screen and (max-width: 1200px) {
+
+    .parallax-window {
+        min-height: 15em;
+        margin: 3em 0 2em 0;
+    }
+
+    .para-title{
+        font-size: 4em;
+    }
+}
 
 
 @media only screen and (max-width: 730px) {
