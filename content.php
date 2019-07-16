@@ -20,16 +20,28 @@
 </head>
 <main>
 <body>
+  <?php
+    require "chloe/connect.php";
+    $requete = "SELECT * FROM video WHERE id_video='3'";
+    $reponse = $bdd->query($requete);
+    $id = $requete->video_id;
+    ;
+  ?>
+  <header>
     <?php include "include/header.php";?>
-
+  </header>
     <div class="container-fluid">
         <div class="row justify-content-center text-center mx-auto">
             <div class="col-md-12" id="head">
-                <h1 id="head-title">BLABLABLIBLABLOU</h1>                
+                <h1 id="head-title">BLABLABLIBLABLOU</h1>
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
-                    <div class="carousel-inner">                                           
+                    <div class="carousel-inner">
                         <div class="carousel-item active" id="main-vid">
-                            <p class="carou-title">TITRE 1</p>
+                          <?php
+                          while($donnees = $reponse ->fetch())
+                          {
+                            ?>
+                            <p class="carou-title"><?php echo $donnees["titre"];?></p>
                             <p id="head-para2">
                             <span class="mot">Catégorie:</span><a href="#">&nbsp sport</a>
                             <span class="mot">Durée:</span> 15:24
@@ -38,7 +50,34 @@
                                     </p>
                             <div class="row justify-content-center mx-auto" id="lecteur">
                                 <div class="col-8" id="vid">
-                                    <?php include "testvideo.php";?>
+                                  <div class="lecteur_frame">
+                                    <video id="videoPlayer" ontimeupdate="update(this)" width="600em" height="300em"
+                                    preload="auto">
+                                      <!--mp4 en tête de liste pour compatibilité portable -->
+                                      <source src="<?php echo $donnees["adresse"];?>" type="video/mp4">
+                                      Si la vidéo ne s'affiche pas correctement, merci de mettre à jour votre navigateur !!
+                                    </video>
+                                    <div id="progressBarControl">
+                                      <div id="progressBar" onclick="clickProgress('videoPlayer', this, event)"></div>
+                                    </div>
+                                  </div>
+                                  <div class="barre">
+                                    <div class="controls-L">
+                                      <button id="playBtn" class="control" onclick="play('videoPlayer', this)"><i class="far fa-play-circle fa-2x" id="transportIcon"></i></button>
+                                      <button class="control" onclick="resume('videoPlayer')"><i class="far fa-stop-circle fa-2x"></i></button>
+                                    </div>
+                                    <img src="img/logovid.png" class="logovid" alt="logo été indien" width="100em" height="100em"/>
+                                    <div class="controls-R">
+                                    <span class="volume">
+                                        <a class="stick1" onclick="volume('videoPlayer', 0)"></a>
+                                        <a class="stick2" onclick="volume('videoPlayer', 0.3)"></a>
+                                        <a class="stick3" onclick="volume('videoPlayer', 0.5)"></a>
+                                        <a class="stick4" onclick="volume('videoPlayer', 0.7)"></a>
+                                        <a class="stick5" onclick="volume('videoPlayer', 1)"></a>
+                                      </span>
+                                      <button class="control" id="grdecran" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="col-12" id="vid-petit">
                                     <?php include "video_petit.php";?>
@@ -54,146 +93,26 @@
                                 <div class="col-md-2"></div>
                             </div>
                         </div>
-                        <div class="carousel-item" id="main-vid">
-                            <p class="carou-title">TITRE 2</p>
-                            <p id="head-para2">
-                            <span class="mot">Catégorie:</span><a href="#">&nbsp yoga</a>
-                            <span class="mot">Durée:</span> 40:20
-                            <span class="mot">Date:</span> 18/02/2018
-                            <span class="mot">Par:</span> Walther White
-                                    </p>
-                            <div class="row justify-content-center mx-auto">
-                                <div class="col-8" id="vid">
-                                    <?php include "testvideo.php";?>
-                                </div>
-                                <div class="col-12" id="vid-petit">
-                                    <?php include "video_petit.php";?>
-                                </div>
-                            </div>
-                            <div class="row mx-auto" id="para">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
-                                    <p id="head-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Reiciendis modi voluptas saepe excepturi corporis, voluptatem eius distinctio
-                                        dolor esse eveniet</p>
-                                </div>
-                                <div class="col-md-2"></div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" id="main-vid">
-                            <p class="carou-title">TITRE 3</p>
-                            <p id="head-para2">
-                            <span class="mot">Catégorie:</span><a href="#">&nbsp santé</a>
-                            <span class="mot">Durée:</span> 31:28
-                            <span class="mot">Date:</span> 02/01/2018
-                            <span class="mot">Par:</span> Michael Scott
-                                    </p>
-                            <div class="row justify-content-center mx-auto">
-                                <div class="col-8" id="vid">
-                                    <?php include "testvideo.php";?>
-                                </div>
-                                <div class="col-12" id="vid-petit">
-                                    <?php include "video_petit.php";?>
-                                </div>
-                            </div>
-                            <div class="row mx-auto" id="para">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
-                                    <p id="head-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Reiciendis modi voluptas saepe excepturi corporis, voluptatem eius distinctio
-                                        dolor esse eveniet</p>
-                                </div>
-                                <div class="col-md-2"></div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <!--<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
-                    </a>
+                    </a>-->
+                    <button class="carousel-control-next" OnClick="http://localhost/github/Ete-indou/content.php">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/seniorsport.jpg">
-        <h1 class="para-title">Sport en video<br />efficace et ludique!</h1>
-        </div>
-        <div class="d-flex flex-row">
-            <div id="recipeCarousel" class="carousel slide w-100  justify-content-center" data-ride="carousel">
-            <h4 class="car-title">Autres vidéos de "catégorie 1"</h4>
-                <div class="carousel-inner justify-content-center w-100 phf " role="listbox">
-                    <div class="carousel-item row no-gutters justify-content-center active" id="carou">
-                        <div class="row">
-                            <div class="col-1"></div>
-                            <div class="col-10" id="car">
-                                <div class="row">
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/1.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/2.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/3.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/4.png" id="miniature" alt=""></a></div>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
-                    </div>
-                    <div class="carousel-item row no-gutters justify-content-center" id="carou">
-                        <div class="row">
-                        <div class="col-1"></div>
-                            <div class="col-10 justify-content-center" id="car">
-                                <div class="row">
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/1.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/2.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/3.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/4.png" id="miniature" alt=""></a></div>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
-                    </div>
-                    <div class="carousel-item row no-gutters justify-content-center" id="carou">
-                        <div class="row">
-                        <div class="col-1"></div>
-                            <div class="col-10 justify-content-center" id="car">
-                                <div class="row">
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/1.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/2.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/3.png" id="miniature" alt=""></a></div>
-                                    <div class="col-10 col-md-3 float-left" id="first"> <a href="content.php"><img
-                                                src="img/4.png" id="miniature" alt=""></a></div>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
     </div>
+    <?php include "include/autresVideos.php"; ?>
 
-    
 </main>
     <?php include "include/footer.php";?>
 

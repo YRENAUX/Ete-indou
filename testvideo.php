@@ -1,6 +1,6 @@
 
   <link href="css/testvideo.css" type="text/css" rel="stylesheet"/>
-
+          <section class="video">
           <div class="lecteur_frame">
             <video id="videoPlayer" ontimeupdate="update(this)" width="600em" height="300em"
             preload="auto">
@@ -29,7 +29,5 @@
               <button class="control" id="grdecran" onclick="fullscreen()"><i class="fas fa-compress fa-2x"></i></button>
             </div>
           </div>
-
-
+        </section>
 <script src="js/testvideo.js" type="text/javascript"></script>
-
