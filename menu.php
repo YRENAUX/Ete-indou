@@ -1,3 +1,4 @@
+<?php include ('function/co.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,11 @@
 
 <body>
 <main>
+<?php
+    $requete = "SELECT * FROM mutuelle";
+    $reponse = $conn->query($requete);
+  ?>
+
     <div class="container-fluid">
         <div class="row justify-content-center mx-auto">
             <div class="col-xl-2" id="left">
@@ -32,17 +38,20 @@
                 </ul>
             </div>
             <div class="col-xl-10 col-lg-12" id="right">
+            <?php
+                          $donnees = $reponse ->fetch()
+                          
+                            ?>
                 <div class="head">
                     <?php include "include/header.php";?>
                 </div>
-                <h1 class="main-title">BLABLIBLABLOU</h1>
+                <h1 class="main-title"><?php echo $donnees["nom"];?></h1>
                 <hr class="col-4" id="hr">
                 <div class="bandeau">
-                    <img src="img/logo.png" alt="logo" class="img-fluid" id="main-photo">
-                    <p class="main-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in dolore natus,
-                        perferendis incidunt, similique impedit fugit reprehenderit pariatur officia ut ducimus? Dolorem
-                        odio exercitationem sed illum aspernatur veniam velit.</p>
+                    <img src="<?php echo $donnees["img"];?>" alt="logo" class="img-fluid" id="main-photo">
+                    <p class="main-para"><?php echo $donnees["description"];?></p>
                 </div>
+
                 <hr class="col-4" id="hr">
                 <div class="mini_menu">
                     <div class="row justify-content-center text-align-center">

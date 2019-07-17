@@ -21,9 +21,9 @@
 <main>
 <body>
   <?php
-    require "chloe/connect.php";
+    require "function/co.php";
     $requete = "SELECT * FROM video WHERE id_video='3'";
-    $reponse = $bdd->query($requete);
+    $reponse = $conn->query($requete);
     $id = $requete->video_id;
     ;
   ?>
@@ -43,10 +43,10 @@
                             ?>
                             <p class="carou-title"><?php echo $donnees["titre"];?></p>
                             <p id="head-para2">
-                            <span class="mot">Catégorie:</span><a href="#">&nbsp <?php echo $donnees["genre"];?></a>
-                            <span class="mot">Durée:</span> <?php echo $donnees["duree"];?>
-                            <span class="mot">Date:</span> <?php echo $donnees["date_upload"];?>
-                            <span class="mot">Par:</span> <?php echo $donnees["coach"];?>
+                            <span class="mot">Catégorie:</span><a href="#">&nbsp sport</a>
+                            <span class="mot">Durée:</span> 15:24
+                            <span class="mot">Date:</span> 30/04/2018
+                            <span class="mot">Par:</span> John Snow
                                     </p>
                             <div class="row justify-content-center mx-auto" id="lecteur">
                                 <div class="col-8" id="vid">
@@ -86,9 +86,7 @@
                             <div class="row mx-auto" id="para">
                                 <div class="col-md-2"></div>
                                 <div class="col-md-8">
-                                    <p id="head-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Reiciendis modi voluptas saepe excepturi corporis, voluptatem eius distinctio
-                                        dolor esse eveniet</p>
+                                    <p id="head-para"><?php echo $donnees["description"];?></p>
                                 </div>
                                 <div class="col-md-2"></div>
                             </div>
@@ -99,14 +97,14 @@
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <!--<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <!--<button class="carousel-control-next" OnClick="http://localhost/github/Ete-indou/content.php">
+                        <span class="sr-only">Next</span>
+                    </a>-->
+                    <button class="carousel-control-next" OnClick="http://localhost/github/Ete-indou/content.php">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
-                    </button>-->
+                    </button>
                 </div>
             </div>
         </div>
