@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="icon" sizes="64x64" href="img/fav.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -22,12 +23,35 @@
 
   <body>
     <?php
-require_once 'function/co.php';
+    require_once 'function/co.php';
     require_once 'function/select_vid.php';
-
     $video = getVid($conn,1, $_GET['id']);
+    $id= $_GET['id'];
+  
 
-?>
+$stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video < :id_video Order By id_video DESC LIMIT 1');
+
+$stmt->execute(array('id_video' => 10));
+
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+$precedent_id = $stmt->fetchColumn();    
+
+var_dump($precedent_id);
+
+
+$stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video > :id_video Order By id_video ASC LIMIT 1');
+
+$stmt->execute(array('id_video' => 10));
+
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+$suivant_id = $stmt->fetchColumn();  
+
+var_dump($suivant_id);
+
+
+    ?>
     <header>
       <?php include "include/header_content.php";?>
     </header>
@@ -37,8 +61,9 @@ require_once 'function/co.php';
           <h1 id="head-title">Blabliblablou</h1>
         </div>
         <div class="col-1" style="padding-top: 18rem;">
-          <a class="content-control-prev" href="content.php?id=3">
-            < </a> </div> <div class="col-10 content">
+          <a class="content-control-prev" href="content.php?id=<?php echo ($precedent_id) ?>">
+            < </a> </div> 
+            <div class="col-10 content active">
               <div class="content-inner">
                 <div class="content-item" id="main-vid">
                   <p class="content-title"><?= $video->titre ?></p>
@@ -97,7 +122,7 @@ require_once 'function/co.php';
         </div>
 
         <div class="col-1" style="padding-top: 18rem;">
-          <a class="content-control-next" href="content.php?id=4">
+          <a class="content-control-next" href="content.php?id=<?php echo ($suivant_id) ?>">
             >
           </a>
         </div>

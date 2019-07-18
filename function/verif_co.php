@@ -1,6 +1,6 @@
 <?php 
 
-if(!isset($_SESSION['mutuelle'])){
+if(!isset($_SESSION['admin'])){
     header('location:index_admin.php');
 }
 ?>

@@ -9,7 +9,7 @@ include 'function/verif_co.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ete indien - Create</title>
-    <link rel="icon" sizes="32x32" href="img/favlogo.ico">
+    <link rel="icon" sizes="64x64" href="img/fav.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -23,7 +23,7 @@ include 'function/verif_co.php';
 <body>
 
     <div class="row mx-auto">
-        <a class="btn mx-auto btn-primary mt-5 mb-5" href="index_admin.php"><?=$_SESSION['mutuelle']?></a>
+        <a class="btn mx-auto btn-primary mt-5 mb-5" href="index_admin.php"><?=$_SESSION['admin']?></a>
     </div>
 
     <?php 
