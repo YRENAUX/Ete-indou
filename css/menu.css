@@ -109,7 +109,8 @@ main{
 }
 
 #liens{
-    width: 20rem;
+    width: 23rem;
+    height: 12rem;
 }
 
 #vid{
@@ -118,7 +119,7 @@ main{
 }
 
 #sous-vid{
-    margin-top: 2%;
+    margin-top: 5%;
     justify-content: space-around;
 }
 
@@ -139,8 +140,18 @@ main{
 }
 
 .card-body{
-    margin-top: 2%;
+    margin-top: 5%;
     padding: 0;
+    height: 6rem;
+}
+
+.card-title{
+    color: black;
+    text-decoration: none;
+}
+
+.genre{
+    color: black;
 }
 
 @media only screen and (max-width: 1200px) {

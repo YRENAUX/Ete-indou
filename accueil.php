@@ -39,7 +39,6 @@
   </div>
   </div>
 
-
   <?php
     include 'function/co.php';
     include 'function/select_login.php';
@@ -52,7 +51,7 @@
             ]);
             $user = $req->fetch();
         if ($user){
-            $_SESSION['mutuelle'] = $_POST['nom'];
+            $_SESSION['id'] = $_POST['nom'];
             ob_start();
             header('location:menu.php');
             exit;

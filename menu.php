@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <?php include ('function/co.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +19,7 @@
 <body>
 <main>
 <?php
-    $requete = "SELECT * FROM mutuelle";
+    $requete = "SELECT * FROM mutuelle ";
     $reponse = $conn->query($requete);
   ?>
 
@@ -70,118 +72,26 @@
                     </div>
                 </div>
                 <div class="row justify-content-center text-center mx-auto">
+
+                <?php 
+        $req = $conn->query('SELECT * FROM video');
+        $genres = $req->fetchAll();
+
+        foreach ($genres as $genre): ?>
                     <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/1.png" id="liens" alt=""></a>
+                        <div class="card" style="width:23rem;">
+                            <a href="content.php?id=<?= $genre['id_video']?>"><img src="<?= $genre['img']?>" id="liens" alt=""></a>
                             <div class="card-body">
-                                <a href="#" class="card-title">vidéo 1</a>
+                                <a href="content.php?id=<?= $genre['id_video']?>" class="card-title"><?= $genre['titre']?></a>
                                 <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 1</a>
-                                    <p>20:28</p>
+                                    <a class="genre" href="#"><?= $genre['genre']?></a>
+                                    <p><?= $genre['duree']?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/2.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 2</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 2</a>
-                                    <p>32:10</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/3.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 3</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 1</a>
-                                    <p>20:28</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center text-center mx-auto">
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/5.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 5</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 1</a>
-                                    <p>20:28</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/6.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 6</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 2</a>
-                                    <p>32:10</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/7.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 7</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 3</a>
-                                    <p>20:28</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center text-center mx-auto">
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/9.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 9</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 1</a>
-                                    <p>20:28</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/2.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 10</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 2</a>
-                                    <p>32:10</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6" id="vid">
-                        <div class="card" style="width:20rem;">
-                            <a href="content.php"><img src="img/4.png" id="liens" alt=""></a>
-                            <div class="card-body">
-                                <a href="#" class="card-title">vidéo 4</a>
-                                <div class="row" id="sous-vid">
-                                    <a href="#">catégorie 4</a>
-                                    <p>20:28</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <?php endforeach ?>
                 </div><br>
                 <hr class="col-4" id="hr"><br>
                 <footer>

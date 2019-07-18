@@ -148,7 +148,10 @@
 
   }
 </style>
-
+<?php
+    $requete = "SELECT * FROM mutuelle";
+    $reponse = $conn->query($requete);
+  ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="menu.php"><img src="img/logo1.png" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -168,17 +171,12 @@
           <a id="drop" href="#">AUTRES VIDEOS</a>
         </div>
       </li>
-      <li class="dropdown">
-        <button class="dropbtn">BLABLA</button>
-        <div class="dropdown-content">
-          <a id="drop" href="#">LINK 1</a>
-          <a id="drop" href="#">LINK 2</a>
-          <a id="drop" href="#">LINK 3</a>
-        </div>
-      </li>
     </ul>
+    <?php
+      $donnees = $reponse ->fetch()                          
+    ?>
     <div class="float-right">
-      <p class="tel" href="#">N° telephone par mutuelle</p>
+      <p class="tel" href="#">Tel: <?php echo $donnees["tel"];?></p>
     </div>
   </div>
 </nav>

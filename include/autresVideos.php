@@ -7,7 +7,7 @@
 
 <!-- carousel des autres vidéos -->
 
-<div class="d-flex flex-row">
+<div class="d-flex flex-row" style="height: 18rem;">
     <div id="recipeCarousel" class="carousel slide w-100  justify-content-center" data-ride="carousel">
     <h4 class="car-title">Autres vidéos de "catégorie 1"</h4>
         <div class="carousel-inner justify-content-center w-100 phf " role="listbox">

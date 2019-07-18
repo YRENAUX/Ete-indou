@@ -70,33 +70,12 @@ main{
 }
 
 
-.carou-title {
+.content-title {
     font-size: 38px;
     color: #FF823B;
     font-weight: 600;
     border-radius: 5px;
     margin-top: 2%;
-}
-
-
-.carousel-control-next-icon{
-  content: '>';
-  font-size: 55px;
-  font-weight: 800;
-  background-color: #FF823B;
-  border-radius: 5px;
-  height: 120px;
-  width: 60px;
-}
-
-.carousel-control-prev-icon {
-  content: '<';
-  font-size: 55px;
-  font-weight: 800;
-  background-color: #FF823B;
-  border-radius: 5px;
-  height: 120px;
-  width: 60px;
 }
 
 .parallax-window {
@@ -120,7 +99,7 @@ main{
     width: 355px;
 }
 
-#recipeCarousel {
+#recipecontent {
     margin-top: 2%;
     margin-bottom: 2%;
     padding-bottom: 2%;
@@ -133,10 +112,24 @@ main{
     color: black;
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-    width: 8%;
+.content-control-next,
+.content-control-prev {
+    text-align: center;
+    font-size: 8em;
+    color: #FF823B!important;
+    opacity: 0.7;
 }
+
+.content-control-next:hover,
+.content-control-prev:hover {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+a:link 
+{ 
+text-decoration:none; 
+} 
 
 #car {
     padding-left: 0;
@@ -179,16 +172,6 @@ main{
     #main-vid iframe {
         height: 150px;
         width: 266px;
-    }
-
-    .carousel-control-next-icon:after{
-        margin-right:-45px;
-        padding: 1px 3px;
-    }
-
-    .carousel-control-prev-icon:after{
-        margin-left:-5px;
-        padding: 1px 3px;
     }
 
     #head-para {
