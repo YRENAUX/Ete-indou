@@ -16,12 +16,12 @@ main{
 }
 
 .navbar{
-    height: 100px;
-    background-color: #EEEEEE ;
+    height: 80px;
+    background-color: #ddd ;
 }
 
 #navbarNav{
-    background-color: #EEEEEE;
+    background-color: #ddd;
     margin: 0;
 }
 
@@ -153,6 +153,34 @@ main{
 .genre{
     color: black;
 }
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide columns by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  .portfolioFilter button {
+    margin: 2em 6px 2em 0;
+    color: #666;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    padding: 4px 15px;
+    border-radius: 50px;
+    display: inline-block;
+  }
+  .portfolioFilter button.active {
+    background: #1E2022;
+    border: 1px solid #1E2022;
+    color: #f9f9f9;
+    box-shadow: none;
+  }
 
 @media only screen and (max-width: 1200px) {
 

@@ -37,7 +37,7 @@ include 'function/verif_co.php';
     @$test5 = $_POST['img'];
     @$test6= $_POST['genre'];  
     @$test7= $_POST['id_genre'];  
-    @$test8= $_POST['description']; 
+    @$test8= $_POST['description' | raw]; 
         if(isset($_POST['submit'])){
             
            $conn->query ("INSERT INTO `video` (`titre`, `date_upload`, `duree`, `coach`, `adresse`, `img`, `genre`, `id_genre`, `description`)
@@ -47,7 +47,7 @@ include 'function/verif_co.php';
        
 ?>
     <div class="container text-center">
-        <h2 class="mx-auto">Ajoutez un projet :</h2>
+        <h2 class="mx-auto">Ajouter une vidéo :</h2>
         <div class="row mx-auto">
             <div class="col-md-12">
                 <div class="well well-sm ">

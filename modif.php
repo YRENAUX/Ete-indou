@@ -43,17 +43,17 @@
     @$test4= $_POST['adresse']; 
     @$test5 = $_POST['img'];
     @$test6= $_POST['genre']; 
-    @$test7= $_POST['description']; 
+    @$test7= $_POST['description' | raw]; 
 
 
         if(isset($_POST['submit'])){
-            $sql1 = $conn->query("UPDATE `video` SET `titre` = '$test', `date_upload` = '$test1', `duree` = '$test2', `coach` = '$test3', `adresse` = '$test4', `img` = '$test5', `genre` = '$test6', `description` = '$test7' WHERE `video`.`id_video`=$current_id");
+            $sql1 = $conn->query("UPDATE video SET titre = '$test', date_upload = '$test1', duree = '$test2', coach = '$test3', adresse = '$test4', img = '$test5', genre = '$test6', description = '$test7' WHERE video.id_video=$current_id");
             header('location:index_admin.php');
         }
     ?>
 
     <div class="container-fluid text-center">
-        <h2 class="mx-auto">Modifier le film :</h2>
+        <h2 class="mx-auto">Modifier une vidéo :</h2>
         <div class="row mx-auto ">
             <div class="col-md-12">
                 <div class="well well-sm ">

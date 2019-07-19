@@ -28,14 +28,13 @@
         <div class="row justify-content-center mx-auto">
             <div class="col-xl-2" id="left">
                 <ul class="menu">
-                    <div class="liens">
+                    <div class="liens" id="myBtnContainer">
                         <img src="img/logoo.png" alt="logo" class="menu-img">
                         <hr class="col-4" id="hr">
-                        <li class="cat" href="#">Nouveautés</li>
-                        <li class="cat" href="#">Sport</li>
-                        <li class="cat" href="#">Yoga</li>
-                        <li class="cat" href="#">Recette</li>
-                        <li class="cat" href="#">Autres vidéos</li>
+                        <li class="filt active" onclick="filterSelection('all')">Tout</li>
+                        <li class="filt" onclick="filterSelection('sport')">Sport</li>
+                        <li class="filt" onclick="filterSelection('yoga')">Yoga</li>
+                        <li class="filt" onclick="filterSelection('autres')">Autres vidéos</li>
                         <hr class="col-4" id="hr">
                     </div>
                 </ul>
@@ -63,37 +62,40 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Catégories
                             </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Sport</a>
-                                <a class="dropdown-item" href="#">Yoga</a>
-                                <a class="dropdown-item" href="#">Santé</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="myBtnContainer">
+                                <a class="dropdown-item filt active" href="#"  onclick="filterSelection('all')">Tout</a>
+                                <a class="dropdown-item filt" href="#"  onclick="filterSelection('sport')">Sport</a>
+                                <a class="dropdown-item filt" href="#"  onclick="filterSelection('yoga')">Yoga</a>
+                                <a class="dropdown-item filt" href="#"  onclick="filterSelection('autres')">Santé</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center text-center mx-auto">
-
+                
                 <?php 
-        $req = $conn->query('SELECT * FROM video');
-        $genres = $req->fetchAll();
+                $req = $conn->query('SELECT * FROM video');
+                $vids = $req->fetchAll();      
+                foreach ($vids as $vid): 
+                ?>
 
-        foreach ($genres as $genre): ?>
-                    <div class="col-xl-4 col-lg-6 col-md-6" id="vid">
+                    <div class="column <?php echo $vid['genre'] ?> col-xl-4 col-lg-6 col-md-6 p-0" id="vid">
                         <div class="card" style="width:23rem;">
-                            <a href="content.php?id=<?= $genre['id_video']?>"><img src="<?= $genre['img']?>" id="liens" alt=""></a>
+                            <a href="content.php?id=<?= $vid['id_video']?>"><img src="<?= $vid['img']?>" id="liens" alt=""></a>
                             <div class="card-body">
-                                <a href="content.php?id=<?= $genre['id_video']?>" class="card-title"><?= $genre['titre']?></a>
+                                <a href="content.php?id=<?= $vid['id_video']?>" class="card-title"><?= $vid['titre']?></a>
                                 <div class="row" id="sous-vid">
-                                    <a class="genre" href="#"><?= $genre['genre']?></a>
-                                    <p><?= $genre['duree']?></p>
+                                    <a class="genre" href="#"><?= $vid['genre']?></a>
+                                    <p><?= $vid['duree']?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <?php endforeach ?>
-                </div><br>
+
+                </div>
+                <br>
                 <hr class="col-4" id="hr"><br>
                 <footer>
                     <?php include "include/footer.php"; ?>
@@ -114,7 +116,7 @@
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6003001.js"></script>
     <!-- End of HubSpot Embed Code -->
-
+	<script src="js/filter.js"></script>
 </body>
 
 </html>

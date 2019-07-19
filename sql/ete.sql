@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 18 juil. 2019 à 13:57
+-- Généré le :  ven. 19 juil. 2019 à 11:50
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
   `id_genre` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id_genre`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `genre`
@@ -84,7 +84,8 @@ CREATE TABLE IF NOT EXISTS `genre` (
 
 INSERT INTO `genre` (`id_genre`, `nom`) VALUES
 (1, 'sport'),
-(2, 'yoga');
+(2, 'yoga'),
+(3, 'autres');
 
 -- --------------------------------------------------------
 
@@ -131,17 +132,22 @@ CREATE TABLE IF NOT EXISTS `video` (
   `description` text NOT NULL,
   PRIMARY KEY (`id_video`),
   KEY `video_genre_FK` (`id_genre`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `video`
 --
 
 INSERT INTO `video` (`id_video`, `titre`, `date_upload`, `duree`, `coach`, `id_genre`, `adresse`, `img`, `genre`, `description`) VALUES
-(3, 'Comment tonifier les muscles des bras', '2017-09-13', '00:18:22', 'jim', 1, 'img/ete3.mp4', 'img/1.png', 'sport', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis exercitationem sunt, vel earum na'),
+(3, 'Comment tonifier les muscles des bras', '2017-09-13', '00:18:22', 'jim', 1, 'img/ete3.mp4', 'img/1.png', 'sport', ':my;,yqennrrlmu luuuuuuuuuuu uuuuuuuuuuuuu uuuuuu'),
 (4, 'Comment tonifier les triceps quand on est senior', '2018-07-10', '00:02:32', 'jim', 1, 'img/ete2.mp4', 'img/2.png', 'sport', ' Sint expedita incidunt nisi iure perferendis libero dolores quia provident perspiciatis minus!'),
-(7, 'bdeqfvr', '2019-07-15', '05:08:00', 'mike', 1, 'img/ete3.mp4', 'img/a.jpg', 'sport', 'blablablajcezpjpejpjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk\r\n'),
-(8, 'tknxnyynnyf', '2018-11-30', '00:12:00', 'gael', 2, 'img/ete.mp4', 'img/3.jpg', 'yoga', 'On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. Lavantage du Lorem Ipsum sur un texte générique comme Du texte. Du texte. ');
+(7, 'aliquam quaerat voluptatem', '2019-07-15', '05:08:00', 'mike', 2, 'img/ete3.mp4', 'img/9.png', 'yoga', 'blablab lajcezpjpejpjjj jjjjjjjjjjjkkkkkkkkkk kkkkkkkkkkkkkkkkkkkk\r\n'),
+(8, 'illum qui dolorem eum fugiat quo voluptas', '2018-11-30', '00:12:00', 'gael', 2, 'img/ete.mp4', 'img/3.png', 'yoga', 'On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. Lavantage du Lorem Ipsum sur un texte générique comme Du texte.'),
+(10, 'Sed ut perspiciatis unde', '2019-03-13', '00:13:00', 'Jacky', 3, 'img/ete.mp4', 'img/4.png', 'autres', 'voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'),
+(11, 'Neque porro quisquam ', '2019-02-19', '00:28:00', 'Laure', 3, 'img/ete2.mp4', 'img/5.png', 'autres', 'praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident'),
+(12, 'Itaque earum rerum hic tenetur', '2019-07-21', '00:33:00', 'Paul', 1, 'img/ete3.mp4', 'img/6.png', 'sport', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas'),
+(13, 'vel illum qui dolorem', '2018-11-23', '00:49:00', 'Jim', 2, 'img/ete.mp4', 'img/7.png', 'yoga', 'illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet'),
+(14, 'magnam aliquam quaerat voluptatem', '2019-04-09', '01:20:00', 'Gérard', 3, 'img/ete2.mp4', 'img/8.png', 'autres', 'nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate');
 
 --
 -- Contraintes pour les tables déchargées

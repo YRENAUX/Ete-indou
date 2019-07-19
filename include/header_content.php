@@ -3,7 +3,7 @@
         position: fixed;
         width: 100%;
         z-index: 20;
-        background-color: #eee !important;
+        background-color: #ddd !important;
         padding: 0 !important;
         padding: 0 2% 0 2%;
         top: 0;
@@ -21,13 +21,13 @@
     }
 
     .home {
-        margin: auto 20px;
+        margin: auto 40px;
     }
 
     .dropbtn {
-        background-color: #eee !important;
+        background-color: #ddd !important;
         color: #1d1d1d;
-        padding: 30px;
+        padding: 25px;
         font-size: 20px;
         font-weight: 600;
         border: none;
@@ -157,10 +157,11 @@
             </a>
             <li class="dropdown"">
                 <button class=" dropbtn">VIDEOS</button>
-                <div class="dropdown-content">
-                    <a id="drop" href="#">SPORT</a>
-                    <a id="drop" href="#">YOGA</a>
-                    <a id="drop" href="#">AUTRES VIDEOS</a>
+                <div class="dropdown-content" id="myBtnContainer">
+                    <a id="drop" class="filt active" href="menu.php"  onclick="filterSelection('all')">TOUT</a>
+                    <a id="drop" class="filt" href="menu.php"  onclick="filterSelection('sport')">SPORT</a>
+                    <a id="drop" class="filt" href="menu.php"  onclick="filterSelection('yoga')">YOGA</a>
+                    <a id="drop" class="filt" href="menu.php"  onclick="filterSelection('autres')">AUTRES VIDEOS</a>
                 </div>
             </li>
         </ul>
