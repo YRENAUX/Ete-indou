@@ -264,3 +264,17 @@ text-decoration:none;
     display: none;
 }
 }
+
+.carousel {
+    background: #EEE;
+  }
+.carousel img{
+    z-index: 1000;
+    width: 100%;
+}
+  .carousel-cell {
+    width: 28%;
+    height: 200px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }

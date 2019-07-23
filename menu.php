@@ -1,6 +1,6 @@
 <?php session_start();
 ?>
-<?php include ('function/co.php'); ?>
+<?php include('function/co.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,13 +45,14 @@
                           
                             ?>
                 <div class="head">
-                    <?php include "include/header.php";?>
+                    <?php include "include/header.php";
+                        ?>
                 </div>
-                <h1 class="main-title" id="top-gallery"><?php $_SESSION["nom"];?></h1>
+                <h1 class="main-title" id="top-gallery"><?php $_SESSION["nom"]; ?></h1>
                 <hr class="col-4" id="hr">
                 <div class="bandeau">
-                    <img src="<?php echo $_SESSION["img"];?>" alt="logo" class="img-fluid" id="main-photo">
-                    <p class="main-para"><?php var_dump($_SESSION);?></p>
+                    <img src="<?php echo $_SESSION["assurance_img"]; ?>" alt="logo" class="img-fluid" id="main-photo">
+                    <p class="main-para"><?php echo $_SESSION["assurance_description"]; ?></p>
                 </div>
 
                 <hr class="col-4" id="hr">

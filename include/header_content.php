@@ -169,7 +169,7 @@
       $donnees = $reponse ->fetch()                          
     ?>
     <div class="float-right">
-      <p class="tel" href="#">Tel: <?php echo $donnees["tel"];?></p>
+      <p class="tel" href="#">Tel: <?php echo  $_SESSION['assurance_tel'] ?></p>
     </div>
     </div>
 </nav>

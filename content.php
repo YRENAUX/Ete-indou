@@ -1,3 +1,7 @@
+<?php session_start();
+?>
+<?php include('function/co.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +19,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css%22%3E">
   <link href="css/testvideo.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="css/content.css">
 
@@ -133,27 +138,35 @@
     $id= $_GET['id'];
   
 
-    $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video < :id_video Order By id_video DESC LIMIT 1');
+    // $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video < :id_video Order By id_video DESC LIMIT 1');
+    // $stmt->execute(array('id_video' => 10));
+    // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    // $precedent_id = $stmt->fetchColumn();    
+    // var_dump($precedent_id);
 
-    $stmt->execute(array('id_video' => 10));
+    $precedent_id = -1;
 
+    $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video < :id_video ORDER BY id_video DESC LIMIT 1');
+    $stmt->execute(array('id_video' => $id));
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $precedent_id = $stmt->fetchColumn();
 
-    $precedent_id = $stmt->fetchColumn();    
+    //var_dump($precedent_id);
 
-    var_dump($precedent_id);
+    // $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video > :id_video Order By id_video ASC LIMIT 1');
+    // $stmt->execute(array('id_video' => 10));
+    // $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    // $suivant_id = $stmt->fetchColumn();  
+    // var_dump($suivant_id);
 
+    $suivant_id = -1;
 
-    $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video > :id_video Order By id_video ASC LIMIT 1');
-
-    $stmt->execute(array('id_video' => 10));
-
+    $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video > :id_video ORDER BY id_video ASC LIMIT 1');
+    $stmt->execute(array('id_video' => $id));
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $suivant_id = $stmt->fetchColumn();
 
-    $suivant_id = $stmt->fetchColumn();  
-
-    var_dump($suivant_id);
-
+    //var_dump($suivant_id);
 
     ?>
     <div class="example1">
@@ -255,6 +268,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="js/testvideo.js" type="text/javascript"></script>
 <script src="js/parallax.min.js"></script>
 <!-- Start of HubSpot Embed Code -->

@@ -8,7 +8,7 @@
   {
       die('Erreur : '.$e->getMessage());
   }
-  $req = $conn->prepare('SELECT nom, mdp FROM `mutuelle` WHERE nom=:nom AND mdp=:mdp');
+  $req = $conn->prepare('SELECT nom, mdp, img, description, tel FROM `mutuelle` WHERE nom=:nom AND mdp=:mdp');
 
 
   if(isset($_POST['submit'])){
@@ -20,6 +20,9 @@
       if ($user){
         session_start();
           $_SESSION['id'] = $_POST['nom'];
+          $_SESSION['assurance_img'] = $user['img'];
+          $_SESSION['assurance_description'] = $user['description']; 
+          $_SESSION['assurance_tel'] = $user['tel'];
           ob_start();
           header('location:menu.php');
           exit;
