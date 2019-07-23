@@ -5,7 +5,7 @@
   <video id="videoPlayer" ontimeupdate="update(this)" width="300em" height="150em"
   preload="auto">
     <!--mp4 en tête de liste pour compatibilité portable -->
-    <source src="img/ete.mp4" type="video/mp4">
+    <source src="<?= $video->adresse ?>" type="video/mp4">
     Si la vidéo ne s'affiche pas correctement, merci de mettre à jour votre navigateur !!
   </video>
   <div id="progressBarControl">

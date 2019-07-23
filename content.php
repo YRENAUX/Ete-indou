@@ -83,14 +83,15 @@
         <div class="col-md-12" id="head">
           <h1 id="head-title"><?php echo $_SESSION["nom"]; ?></h1>
         </div>
-        <div class="col-1 prev" style="padding-top: 18rem;">
-        <?php
+        <div class="col-1 prev">
+          <?php
           if ($precedent_id) {
             ?>
           <a class="content-control-prev" href="content.php?id=<?php echo ($precedent_id) ?>">
             < </a> <?php
                     }
-                    ?></div> <div class="col-12 col-sm-10 p-0 content">
+                    ?></div> 
+            <div class="col-12 col-md-10 p-0 content">
               <div class="content-inner">
                 <div class="content-item" id="main-vid">
                   <p class="content-title"><?= $video->titre ?></p>
@@ -134,7 +135,35 @@
                       </div>
                     </div>
                     <div class="col-12" id="vid-petit">
-                      <?php include "video_petit.php";?>
+                    <div class="lecteur_frame">
+  <video id="videoPlayer" ontimeupdate="update(this)" width="300em" height="150em"
+  preload="auto">
+    <!--mp4 en tête de liste pour compatibilité portable -->
+    <source src="<?= $video->adresse ?>" type="video/mp4">
+    Si la vidéo ne s'affiche pas correctement, merci de mettre à jour votre navigateur !!
+  </video>
+  <div id="progressBarControl">
+    <div id="progressBar" onclick="clickProgress('videoPlayer', this, event)"></div>
+  </div>
+</div>
+<div class="barre">
+  <div class="controls-L">
+    <button id="playBtn" class="control" onclick="play('videoPlayer', this)"><i class="far fa-play-circle" id="transportIcon"></i></button>
+    <button class="control" onclick="resume('videoPlayer')"><i class="far fa-stop-circle"></i></button>
+  </div>
+    <img src="img/logovid.png" alt="logo été indien" width="40em" height="40em"/>
+  <div class="controls-R">
+    <span class="volume">
+      <a class="stick1" onclick="volume('videoPlayer', 0)"></a>
+      <a class="stick2" onclick="volume('videoPlayer', 0.3)"></a>
+      <a class="stick3" onclick="volume('videoPlayer', 0.5)"></a>
+      <a class="stick4" onclick="volume('videoPlayer', 0.7)"></a>
+      <a class="stick5" onclick="volume('videoPlayer', 1)"></a>
+    </span>
+    <button class="control" id="grdecran" onclick="fullscreen()"><i class="fas fa-compress"></i></button>
+  </div>
+</div>
+
                     </div>
                   </div>
                   <div class="row mx-auto" id="para">
@@ -147,9 +176,16 @@
                 </div>
               </div>
         </div>
-
-        <div class="col-1 next" style="padding-top: 18rem;">
-        <?php
+        <div class="col-1 prevm">
+          <?php
+          if ($precedent_id) {
+            ?>
+          <a class="content-control-prev" href="content.php?id=<?php echo ($precedent_id) ?>">
+            < </a> <?php
+                    }
+                    ?></div> 
+        <div class="col-1 next">
+          <?php
           if ($suivant_id) {
             ?>
           <a class="content-control-next" href="content.php?id=<?php echo ($suivant_id) ?>">

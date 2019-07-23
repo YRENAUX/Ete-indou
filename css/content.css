@@ -216,12 +216,20 @@ main{
     font-weight: 700;
 }
 
+.prev, .next{
+    padding-top: 18rem;
+}
+
+.prevm{
+    display: none;
+    margin: 1em;
+}
+
 .content-control-next,
 .content-control-prev {
     text-align: center;
     font-size: 8em;
     color: #FF823B!important;
-    opacity: 0.7;
 }
 
 .content-control-next:hover,
@@ -281,10 +289,10 @@ text-decoration:none;
   }
   /* arrow color */
   .flickity-prev-next-button .arrow {
-    fill: #4C4C4C;
+    fill: #FF823B;
   }
   .flickity-prev-next-button.no-svg {
-    color: #4C4C4C;
+    color: #FF823B;
   }
   .flickity-prev-next-button:hover {
     background: transparent;
@@ -329,6 +337,7 @@ text-decoration:none;
         margin-right: 10px;
         border-radius: 5px;
       }
+
 }
 @media only screen and (max-width: 992px) {
     .carousel {
@@ -339,6 +348,8 @@ text-decoration:none;
         width: 48%;
         height: 500px;
       }
+
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -416,6 +427,20 @@ text-decoration:none;
       .carousel-cell {
         width: 48%;
       }
+
+      .prev{
+          display: none;
+      } 
+      .next{
+        padding-top: 0;
+        margin: 1em;
+    }
+
+    .prevm{
+        display: block;
+    }
+
+    
 }
 
 
@@ -449,7 +474,7 @@ text-decoration:none;
 }
 
 .car{
-    height: 15em;
+    height: 13em;
 }
 .carousel{
     height: 10em;
@@ -457,9 +482,11 @@ text-decoration:none;
   .carousel-cell {
     width: 48%;
   }
-
+  .flickity-prev-next-button {
+    margin-top: -12px;
+  }
   .flickity-prev-next-button.next {
-    right: -15px;
+    right: -40px;
 }
   .flickity-prev-next-button .flickity-button-icon{
     width: 40%;
