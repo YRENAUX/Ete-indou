@@ -48,7 +48,7 @@
                     <?php include "include/header.php";
                         ?>
                 </div>
-                <h1 class="main-title" id="top-gallery"><?php $_SESSION["nom"]; ?></h1>
+                <h1 class="main-title" id="top-gallery"><?php echo $_SESSION["id"]; ?></h1>
                 <hr class="col-4" id="hr">
                 <div class="bandeau">
                     <img src="<?php echo $_SESSION["assurance_img"]; ?>" alt="logo" class="img-fluid" id="main-photo">
@@ -76,7 +76,7 @@
                 
 				<?php
 						$page = (!empty($_GET['page']) ? $_GET['page'] : 1);
-						$limite = 4;
+						$limite = 6;
 					// Partie "Requête"
 					$debut = ($page - 1) * $limite;
 					$query = 'SELECT SQL_CALC_FOUND_ROWS * FROM `video` LIMIT :limite OFFSET :debut';
@@ -102,13 +102,13 @@
 					extract($element);
 					
                      ?>
-                    <div class="column <?php echo $genre ; ?> col-xl-4 col-lg-6 col-md-6 p-0" id="vid">
-                        <div class="card" style="width:23rem;">
+                    <div class="column <?php echo $genre ; ?> col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 p-0" id="vid">
+                        <div class="card" style="max-width:20rem;">
                             <a href="content.php?id=<?php echo $id_video ; ?>"><img src="<?php echo $img ; ?>" id="liens" alt=""></a>
                             <div class="card-body">
                                 <a href="content.php?id=<?php echo $id_video ; ?>" class="card-title"><?php echo $titre ; ?></a>
                                 <div class="row" id="sous-vid">
-                                    <a class="genre" href="#"><?php echo $genre ; ?></a>
+                                    <a class="genre" href="#" onclick="filterSelection('<?php echo $genre ; ?>')"><?php echo $genre ; ?></a>
                                     <p><?php echo $duree ; ?></p>
                                 </div>
                             </div>
@@ -121,7 +121,10 @@
     // Partie "Liens"
 ?>
 
-                    <center>
+                </div>
+                <br>
+                <hr class="col-4" id="hr"><br>
+                <center>
 				<?php
 				// Partie "Liens"
 				/* On calcule le nombre de pages */
@@ -145,10 +148,8 @@
 					?><a href="?page=<?php echo $page + 1; ?>#top-gallery" style="border: solid 1px #ccc; border-radius: 50px; margin-left:1em; padding:0.4em 0.5em; text-decoration: none; font-size: 1.2em; color: #666!important">Page suivante</a><?php
 				endif;
 				?>
-			</center>
-                </div>
-                <br>
-                <hr class="col-4" id="hr"><br>
+            </center>
+            <br><br>
                 <footer>
                     <?php include "include/footer.php"; ?>
                 </footer>

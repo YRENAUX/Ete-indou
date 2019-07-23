@@ -43,7 +43,7 @@
     @$test4= $_POST['adresse']; 
     @$test5 = $_POST['img'];
     @$test6= $_POST['genre']; 
-    @$test7= $_POST['description' | raw]; 
+    @$test7= $_POST['description']; 
 
 
         if(isset($_POST['submit'])){

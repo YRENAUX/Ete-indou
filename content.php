@@ -19,113 +19,10 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css%22%3E">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="css/testvideo.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="css/content.css">
 
-
-  <style>
-    .example1 {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      position: absolute;
-      z-index: -200;
-    }
-
-    .example1 h3 {
-      font-family: arial;
-      left: -250px;
-      font-size: 42em;
-      opacity: 0.6;
-      font-weight: 900;
-      letter-spacing: -410px;
-      word-spacing: -400px;
-      color: #ddd;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      line-height: 50px;
-      text-align: center;
-      /* Starting position */
-      -moz-transform: translateY(100%);
-      -webkit-transform: translateY(100%);
-      transform: translateY(100%);
-      /* Apply animation to this element */
-      -moz-animation: example1 90s linear infinite;
-      -webkit-animation: example1 90s linear infinite;
-      animation: example1 90s linear infinite;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-
-    .example1 h2 {
-      font-family: arial;
-      top: 600px;
-      left: -60px;
-      font-size: 24em;
-      opacity: 0.4;
-      font-weight: 900;
-      letter-spacing: -240px;
-      color: #FF823B;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      line-height: 50px;
-      text-align: center;
-      /* Starting position */
-      -moz-transform: translateY(100%);
-      -webkit-transform: translateY(100%);
-      transform: translateY(100%);
-      /* Apply animation to this element */
-      -moz-animation: example1 60s linear infinite;
-      -webkit-animation: example1 60s linear infinite;
-      animation: example1 60s linear infinite;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-
-    /* Move it (define the animation) */
-    @-moz-keyframes example1 {
-      0% {
-        -moz-transform: translateY(100%);
-      }
-
-      100% {
-        -moz-transform: translateY(-100%);
-      }
-    }
-
-    @-webkit-keyframes example1 {
-      0% {
-        -webkit-transform: translateY(100%);
-      }
-
-      100% {
-        -webkit-transform: translateY(-100%);
-      }
-    }
-
-    @keyframes example1 {
-      0% {
-        -moz-transform: translateY(100%);
-        /* Firefox bug fix */
-        -webkit-transform: translateY(100%);
-        /* Firefox bug fix */
-        transform: translateY(30%);
-      }
-
-      100% {
-        -moz-transform: translateY(-100%);
-        /* Firefox bug fix */
-        -webkit-transform: translateY(-100%);
-        /* Firefox bug fix */
-        transform: translateY(-400%);
-      }
-    }
-  </style>
 </head>
 <main>
 
@@ -171,7 +68,7 @@
     ?>
     <div class="example1">
       <h3
-        style="left: -1000px; top:-800px; font-size: 100em; opacity: 0.1; letter-spacing: -1050px; word-spacing: -800px; animation: example1 220s;  color: #FF823B;">
+        style="left: -1400px; top:-800px; font-size: 100em; opacity: 0.1; letter-spacing: -1050px; word-spacing: -800px; animation: example1 220s;  color: #FF823B;">
         été&nbsp;indien </h3>
       <h3>ETE&nbsp;INDIEN&nbsp;&nbsp;&nbsp;ETE&nbsp;INDIEN </h3>
       <h2>videos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;videos</h2>
@@ -184,16 +81,21 @@
     <div class="container-fluid">
       <div class="row justify-content-center text-center mx-auto">
         <div class="col-md-12" id="head">
-          <h1 id="head-title">Blabliblablou</h1>
+          <h1 id="head-title"><?php echo $_SESSION["nom"]; ?></h1>
         </div>
         <div class="col-1 prev" style="padding-top: 18rem;">
+        <?php
+          if ($precedent_id) {
+            ?>
           <a class="content-control-prev" href="content.php?id=<?php echo ($precedent_id) ?>">
-            < </a> </div> <div class="col-12 col-sm-10 p-0 content">
+            < </a> <?php
+                    }
+                    ?></div> <div class="col-12 col-sm-10 p-0 content">
               <div class="content-inner">
                 <div class="content-item" id="main-vid">
                   <p class="content-title"><?= $video->titre ?></p>
                   <p id="head-para2">
-                    <span class="mot">Catégorie:</span><a href="#"><?= $video->genre ?></a>
+                    <span class="mot">Catégorie:&nbsp</span><a href="#"><?= $video->genre ?></a>
                     <span class="mot">Durée:</span> <?= $video->duree?>
                     <span class="mot">Date:</span> <?= $video->date_upload ?>
                     <span class="mot">Par:</span> <?= $video->coach ?>
@@ -247,9 +149,14 @@
         </div>
 
         <div class="col-1 next" style="padding-top: 18rem;">
+        <?php
+          if ($suivant_id) {
+            ?>
           <a class="content-control-next" href="content.php?id=<?php echo ($suivant_id) ?>">
             >
-          </a>
+          </a><?php
+                    }
+                    ?>
         </div>
       </div>
     </div>
