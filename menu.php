@@ -47,11 +47,11 @@
                 <div class="head">
                     <?php include "include/header.php";?>
                 </div>
-                <h1 class="main-title"><?php echo $donnees["nom"];?></h1>
+                <h1 class="main-title" id="top-gallery"><?php $_SESSION["nom"];?></h1>
                 <hr class="col-4" id="hr">
                 <div class="bandeau">
-                    <img src="<?php echo $donnees["img"];?>" alt="logo" class="img-fluid" id="main-photo">
-                    <p class="main-para"><?php echo $donnees["description"];?></p>
+                    <img src="<?php echo $_SESSION["img"];?>" alt="logo" class="img-fluid" id="main-photo">
+                    <p class="main-para"><?php var_dump($_SESSION);?></p>
                 </div>
 
                 <hr class="col-4" id="hr">
@@ -73,27 +73,78 @@
                 </div>
                 <div class="row justify-content-center text-center mx-auto">
                 
-                <?php 
-                $req = $conn->query('SELECT * FROM video');
-                $vids = $req->fetchAll();      
-                foreach ($vids as $vid): 
-                ?>
+				<?php
+						$page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+						$limite = 4;
+					// Partie "Requête"
+					$debut = ($page - 1) * $limite;
+					$query = 'SELECT SQL_CALC_FOUND_ROWS * FROM `video` LIMIT :limite OFFSET :debut';
+					$query = $conn->prepare($query);
+					$query->bindValue('debut', $debut, PDO::PARAM_INT);
+					$query->bindValue('limite', $limite, PDO::PARAM_INT);
+					$query->execute();
+				
+					/* Ici on récupère le nombre d'éléments total. Comme c'est une requête, il ne
+					* faut pas oublier qu'on ne récupère pas directement le nombre.
+					* De plus, comme la requête ne contient aucune donnée client pour fonctionner,
+					* on peut l'exécuter ainsi directement */
+					$resultFoundRows = $conn->query('SELECT found_rows()');
+					/* On doit extraire le nombre du jeu de résultat */
+					$nombredElementsTotal = $resultFoundRows->fetchColumn();
 
-                    <div class="column <?php echo $vid['genre'] ?> col-xl-4 col-lg-6 col-md-6 p-0" id="vid">
+					// Partie "Boucle"
+					
+					
+                 while($element=$query->fetch(PDO::FETCH_ASSOC))
+                 {
+					// C'est là qu'on affiche les données 
+					extract($element);
+					
+                     ?>
+                    <div class="column <?php echo $genre ; ?> col-xl-4 col-lg-6 col-md-6 p-0" id="vid">
                         <div class="card" style="width:23rem;">
-                            <a href="content.php?id=<?= $vid['id_video']?>"><img src="<?= $vid['img']?>" id="liens" alt=""></a>
+                            <a href="content.php?id=<?php echo $id_video ; ?>"><img src="<?php echo $img ; ?>" id="liens" alt=""></a>
                             <div class="card-body">
-                                <a href="content.php?id=<?= $vid['id_video']?>" class="card-title"><?= $vid['titre']?></a>
+                                <a href="content.php?id=<?php echo $id_video ; ?>" class="card-title"><?php echo $titre ; ?></a>
                                 <div class="row" id="sous-vid">
-                                    <a class="genre" href="#"><?= $vid['genre']?></a>
-                                    <p><?= $vid['duree']?></p>
+                                    <a class="genre" href="#"><?php echo $genre ; ?></a>
+                                    <p><?php echo $duree ; ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <?php endforeach ?>
+				<?php
+      
+    }
+    // Partie "Liens"
+?>
 
+                    <center>
+				<?php
+				// Partie "Liens"
+				/* On calcule le nombre de pages */
+				$nombreDePages = ceil($nombredElementsTotal / $limite);
+
+				/* Si on est sur la première page, on n'a pas besoin d'afficher de lien
+				* vers la précédente. On va donc l'afficher que si on est sur une autre
+				* page que la première */
+				if ($page > 1):
+					?><a href="?page=<?php echo $page - 1; ?>#top-gallery" style="border: solid 1px #ccc; border-radius: 50px; margin-left:1em; padding:0.4em 0.5em; text-decoration: none; font-size: 1.2em; color: #666!important">Page précédente</a><?php
+				endif;
+
+				/* On va effectuer une boucle autant de fois que l'on a de pages */
+				for ($i = 1; $i <= $nombreDePages; $i++):
+					?><a href="?page=<?php echo $i; ?>#top-gallery" style="border: solid 1px #ccc; border-radius: 50px; margin-left:1em; padding:0.4em 0.5em; text-decoration: none; font-size: 1.2em; color: #666!important"><?php echo $i; ?></a> <?php
+				endfor;
+
+				/* Avec le nombre total de pages, on peut aussi masquer le lien
+				* vers la page suivante quand on est sur la dernière */
+				if ($page < $nombreDePages):
+					?><a href="?page=<?php echo $page + 1; ?>#top-gallery" style="border: solid 1px #ccc; border-radius: 50px; margin-left:1em; padding:0.4em 0.5em; text-decoration: none; font-size: 1.2em; color: #666!important">Page suivante</a><?php
+				endif;
+				?>
+			</center>
                 </div>
                 <br>
                 <hr class="col-4" id="hr"><br>

@@ -20,88 +20,106 @@
 
 
   <style>
-  .example1 {
- height: 100%;  
- width: 100%;
- overflow: hidden;
- position: absolute;
- z-index: -200;
-}
-.example1 h3{
-    font-family: arial;
-    left: -250px;
- font-size: 42em;
- opacity: 0.6;
- font-weight: 900;
- letter-spacing: -410px;
- word-spacing: -400px;
- color: #ddd;
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;
- /* Starting position */
- -moz-transform:translateY(100%);
- -webkit-transform:translateY(100%);    
- transform:translateY(100%);
- /* Apply animation to this element */  
- -moz-animation: example1 90s linear infinite;
- -webkit-animation: example1 90s linear infinite;
- animation: example1 90s linear infinite;
- writing-mode: vertical-rl;
-text-orientation: upright;
-}
+    .example1 {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: absolute;
+      z-index: -200;
+    }
 
-.example1 h2 {
-    font-family: arial;
-    top: 600px;
-    left: -60px;
- font-size: 24em;
- opacity: 0.4;
- font-weight: 900;
- letter-spacing: -240px;
- color: #FF823B;
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;
- /* Starting position */
- -moz-transform:translateY(100%);
- -webkit-transform:translateY(100%);    
- transform:translateY(100%);
- /* Apply animation to this element */  
- -moz-animation: example1 60s linear infinite;
- -webkit-animation: example1 60s linear infinite;
- animation: example1 60s linear infinite;
- writing-mode: vertical-rl;
-text-orientation: upright;
-}
+    .example1 h3 {
+      font-family: arial;
+      left: -250px;
+      font-size: 42em;
+      opacity: 0.6;
+      font-weight: 900;
+      letter-spacing: -410px;
+      word-spacing: -400px;
+      color: #ddd;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      /* Starting position */
+      -moz-transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      /* Apply animation to this element */
+      -moz-animation: example1 90s linear infinite;
+      -webkit-animation: example1 90s linear infinite;
+      animation: example1 90s linear infinite;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
 
-/* Move it (define the animation) */
-@-moz-keyframes example1 {
- 0%   { -moz-transform: translateY(100%); }
- 100% { -moz-transform: translateY(-100%); }
-}
-@-webkit-keyframes example1 {
- 0%   { -webkit-transform: translateY(100%); }
- 100% { -webkit-transform: translateY(-100%); }
-}
-@keyframes example1 {
- 0%   { 
- -moz-transform: translateY(100%); /* Firefox bug fix */
- -webkit-transform: translateY(100%); /* Firefox bug fix */
- transform: translateY(30%);       
- }
- 100% { 
- -moz-transform: translateY(-100%); /* Firefox bug fix */
- -webkit-transform: translateY(-100%); /* Firefox bug fix */
- transform: translateY(-400%); 
- }
-}
+    .example1 h2 {
+      font-family: arial;
+      top: 600px;
+      left: -60px;
+      font-size: 24em;
+      opacity: 0.4;
+      font-weight: 900;
+      letter-spacing: -240px;
+      color: #FF823B;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      /* Starting position */
+      -moz-transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      /* Apply animation to this element */
+      -moz-animation: example1 60s linear infinite;
+      -webkit-animation: example1 60s linear infinite;
+      animation: example1 60s linear infinite;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+
+    /* Move it (define the animation) */
+    @-moz-keyframes example1 {
+      0% {
+        -moz-transform: translateY(100%);
+      }
+
+      100% {
+        -moz-transform: translateY(-100%);
+      }
+    }
+
+    @-webkit-keyframes example1 {
+      0% {
+        -webkit-transform: translateY(100%);
+      }
+
+      100% {
+        -webkit-transform: translateY(-100%);
+      }
+    }
+
+    @keyframes example1 {
+      0% {
+        -moz-transform: translateY(100%);
+        /* Firefox bug fix */
+        -webkit-transform: translateY(100%);
+        /* Firefox bug fix */
+        transform: translateY(30%);
+      }
+
+      100% {
+        -moz-transform: translateY(-100%);
+        /* Firefox bug fix */
+        -webkit-transform: translateY(-100%);
+        /* Firefox bug fix */
+        transform: translateY(-400%);
+      }
+    }
   </style>
 </head>
 <main>
@@ -110,40 +128,43 @@ text-orientation: upright;
     <?php
     require_once 'function/co.php';
     require_once 'function/select_vid.php';
+
     $video = getVid($conn,1, $_GET['id']);
     $id= $_GET['id'];
   
 
-$stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video < :id_video Order By id_video DESC LIMIT 1');
+    $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video < :id_video Order By id_video DESC LIMIT 1');
 
-$stmt->execute(array('id_video' => 10));
+    $stmt->execute(array('id_video' => 10));
 
-$stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-$precedent_id = $stmt->fetchColumn();    
+    $precedent_id = $stmt->fetchColumn();    
 
-var_dump($precedent_id);
+    var_dump($precedent_id);
 
 
-$stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video > :id_video Order By id_video ASC LIMIT 1');
+    $stmt = $conn->prepare('SELECT id_video FROM video WHERE id_video > :id_video Order By id_video ASC LIMIT 1');
 
-$stmt->execute(array('id_video' => 10));
+    $stmt->execute(array('id_video' => 10));
 
-$stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-$suivant_id = $stmt->fetchColumn();  
+    $suivant_id = $stmt->fetchColumn();  
 
-var_dump($suivant_id);
+    var_dump($suivant_id);
 
 
     ?>
     <div class="example1">
-    <h3 style="left: -1000px; top:-800px; font-size: 100em; opacity: 0.1; letter-spacing: -1050px; word-spacing: -800px; animation: example1 220s;  color: #FF823B;">été&nbsp;indien </h3>
-<h3>ETE&nbsp;INDIEN&nbsp;&nbsp;&nbsp;ETE&nbsp;INDIEN </h3>
-<h2>videos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;videos</h2>
-</div>
+      <h3
+        style="left: -1000px; top:-800px; font-size: 100em; opacity: 0.1; letter-spacing: -1050px; word-spacing: -800px; animation: example1 220s;  color: #FF823B;">
+        été&nbsp;indien </h3>
+      <h3>ETE&nbsp;INDIEN&nbsp;&nbsp;&nbsp;ETE&nbsp;INDIEN </h3>
+      <h2>videos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;videos</h2>
+    </div>
 
-         <!-- <p style="position: absolute; height:100%; font-size:210px; writing-mode: vertical-rl; text-orientation: upright; font-weight:900; font-familly: arial; letter-spacing: -120px; word-spacing: -130px; z-index: -200; color: orange;">ETE INDIEN</p>  -->
+    <!-- <p style="position: absolute; height:100%; font-size:210px; writing-mode: vertical-rl; text-orientation: upright; font-weight:900; font-familly: arial; letter-spacing: -120px; word-spacing: -130px; z-index: -200; color: orange;">ETE INDIEN</p>  -->
     <header>
       <?php include "include/header_content.php";?>
     </header>
@@ -154,8 +175,7 @@ var_dump($suivant_id);
         </div>
         <div class="col-1 prev" style="padding-top: 18rem;">
           <a class="content-control-prev" href="content.php?id=<?php echo ($precedent_id) ?>">
-            < </a> </div> 
-            <div class="col-12 col-sm-10 p-0 content">
+            < </a> </div> <div class="col-12 col-sm-10 p-0 content">
               <div class="content-inner">
                 <div class="content-item" id="main-vid">
                   <p class="content-title"><?= $video->titre ?></p>
@@ -220,7 +240,7 @@ var_dump($suivant_id);
         </div>
       </div>
     </div>
-    </div>
+
     <?php include "include/autresVideos.php"; ?>
 
 </main>
